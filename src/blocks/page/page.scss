@@ -1,0 +1,14 @@
+.page {
+  box-sizing: border-box;
+  max-width: 1980px;
+  min-width: 320px;
+  min-height: 100vh;
+  margin: auto;
+  font-family: "Inter", "Arial", sans-serif;
+  font-weight: 400;
+  color: #fff;
+  background: #000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
