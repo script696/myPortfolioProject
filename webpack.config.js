@@ -15,8 +15,8 @@ module.exports = {
   devtool: "source-map",
   devServer: {
     // static: path.resolve(__dirname, './dist'),
-    // compress: true,
-    // port: 8080,
+    compress: true,
+    port: 8080,
     open: true
   },
   module: {
@@ -27,8 +27,9 @@ module.exports = {
         exclude: /node_modules/,
       },
       {
-        test: /\.(png|svg|jpg|gif|woff(2)?|eot|ttf|otf)$/,
+        test: /\.(png|svg|jpg|mp4|gif|woff(2)?|eot|ttf|otf)$/,
         type: 'asset/resource',
+        generator: { filename: 'images/[name].[hash][ext]'}
       },
       {
         test: /\.s[ac]ss$/i,

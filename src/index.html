@@ -4,42 +4,132 @@
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
   <title>Document</title>
   <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
 </head>
 
 <body class="page">
-  <div class="swiper mySwiper">
+  <div class="swiper mySwiper1">
     <div class="swiper-wrapper">
       <div class="swiper-slide">
-        <header>
-          <a href="#" class="logo">Logo</a>
-          <div class="rightSide">
-            <div class="btns dayNight">
-              <ion-icon name="moon-outline"></ion-icon>
-              <ion-icon name="sunny-outline"></ion-icon>
+        <section class="home">
+          <header class="home__top">
+            <a href="#" class="home__logo">Logo</a>
+            <div class="home__menu-theme menu-theme">
+              <div class="menu-theme__btns menu-theme__dayNight">
+                <ion-icon class="menu-theme__icon" name="moon-outline"></ion-icon>
+                <ion-icon class="menu-theme__icon" name="sunny-outline"></ion-icon>
+              </div>
+              <div class="menu-theme__btns menu-theme__menuToggle">
+                <ion-icon class="menu-theme__icon" name="menu-outline"></ion-icon>
+                <ion-icon class="menu-theme__icon" name="close-outline"></ion-icon>
+              </div>
             </div>
-            <div class="btns menuToggle">
-              <ion-icon name="menu-outline"></ion-icon>
-              <ion-icon name="close-outline"></ion-icon>
-            </div>
-          </div>
-        </header>
-        <section class="main">
-          <video src="./video/video.mp4" muted defaultMuted autoplay loop playsinline type="mp4"></video>
-          <img src="./img/mask.jpg" class="mask" alt="">
-          <h2>Ocean</h2>
+          </header>
+          <video src="<%=require('./video/video.mp4')%>" class="home__video-mask" muted defaultMuted autoplay loop
+            playsinline type="mp4"></video>
+          <img src="<%=require('./img/mask.jpg')%>" class="home__img-mask mask" alt="">
+          <h2 class="home__title">Dream</h2>
+          <ul class="home__navigation navigation">
+            <li class="navigation__item"><a href="#">Home</a></li>
+            <li class="navigation__item"><a href="#">About</a></li>
+            <li class="navigation__item"><a href="#">Package</a></li>
+            <li class="navigation__item"><a href="#">Contact</a></li>
+          </ul>
         </section>
-        <ul class="navigation">
-          <li><a href="#">Home</a></li>
-          <li><a href="#">About</a></li>
-          <li><a href="#">Package</a></li>
-          <li><a href="#">Contact</a></li>
-        </ul>
       </div>
       <div class="swiper-slide">
-        <img src="https://swiperjs.com/demos/images/nature-2.jpg" />
+        <section class="main">
+          <div class="swiper mySwiper2">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide">
+                <section id="portfolio" class="portfolio">
+                  <div class="portfolio__container">
+                    <h2 class="portfolio__title">
+                      Мои недавние проекты
+                    </h2>
+                    <ul class="portfolio__projects">
+                      <li class="portfolio__project project">
+                        <article class="project__main">
+                          <img src="<%=require('./img/portfolio/russianTravel.png')%>" alt="" class="project__main-mask">
+                          <div class="project__hover-mask"></div>
+                          <div class="project__masc-wrap">
+                            <div class="project__insight-mask"></div>
+                          </div>
+                          <div class="project__number-mask mask-number">
+                            <div class="mask-number__back">01</div>
+                            <div class="mask-number__front">01</div>
+                          </div>
+                          <div class="project__text-wrap">
+                            <h3 class="project__title">Russian-travel</h3>
+                            <p class="project__title-description">One of my first landings</p>
+                            <button id="projectRussianTravel" class="project__popup-open" type="button">See more</button>
+                          </div>
+                        </article>
+                      </li>
+                      <li class="portfolio__project project">
+                        <article class="project__main">
+                          <img src="<%=require('./img/portfolio/TuoTown.png')%>" alt="" class="project__main-mask">
+                          <div class="project__hover-mask"></div>
+                          <div class="project__masc-wrap">
+                            <div class="project__insight-mask"></div>
+                          </div>
+                          <div class="project__number-mask project__number-mask_position_alternate mask-number">
+                            <div class="mask-number__back">02</div>
+                            <div class="mask-number__front">02</div>
+                          </div>
+                          <div class="project__text-wrap project__text-wrap_position_alternate">
+                            <h3 class="project__title">TuoTown</h3>
+                            <p class="project__title-description">My first self-supporting landing</p>
+                            <button id="projectTuoTown" class="project__popup-open" type="button">See more</button>
+                          </div>
+                        </article>
+                      </li>
+                      <li class="portfolio__project project">
+                        <article class="project__main">
+                          <img src="<%=require('./img/portfolio/mesto.png')%>" alt="" class="project__main-mask">
+                          <div class="project__hover-mask"></div>
+                          <div class="project__masc-wrap">
+                            <div class="project__insight-mask"></div>
+                          </div>
+                          <div class="project__number-mask mask-number">
+                            <div class="mask-number__back">03</div>
+                            <div class="mask-number__front">03</div>
+                          </div>
+                          <div class="project__text-wrap">
+                            <h3 class="project__title">Project Mesto</h3>
+                            <p class="project__title-description">My vanilla JavaScript introduction</p>
+                            <button id="projectMesto" class="project__popup-open" type="button">See more</button>
+                          </div>
+                        </article>
+                      </li>
+                      <li class="portfolio__project project">
+                        <article class="project__main">
+                          <img src="<%=require('./img/portfolio/myPortfolioWebsite.png')%>" alt="" class="project__main-mask">
+                          <div class="project__hover-mask"></div>
+                          <div class="project__masc-wrap">
+                            <div class="project__insight-mask"></div>
+                          </div>
+                          <div class="project__number-mask project__number-mask_position_alternate mask-number">
+                            <div class="mask-number__back">04</div>
+                            <div class="mask-number__front">04</div>
+                          </div>
+                          <div class="project__text-wrap project__text-wrap_position_alternate">
+                            <h3 class="project__title">Whats this?</h3>
+                            <p class="project__title-description">Terra incognita</p>
+                            <button id="projectPortfolio" class="project__popup-open" type="button">See more</button>
+                          </div>
+                        </article>
+                      </li>
+                    </ul>
+                  </div>
+                </section>
+              </div>
+            </div>
+            <div class="swiper-scrollbar"></div>
+          </div>
+        </section>
       </div>
       <div class="swiper-slide">
         <img src="https://swiperjs.com/demos/images/nature-3.jpg" />

@@ -1,8 +1,8 @@
-const swiper = new Swiper(".mySwiper", {
+const swiper1 = new Swiper(".mySwiper1", {
   effect: "cube",
   grabCursor: true,
   cubeEffect: {
-    shadow: true,
+    shadow: false,
     slideShadows: true,
     shadowOffset: 20,
     shadowScale: 0.94,
@@ -12,4 +12,15 @@ const swiper = new Swiper(".mySwiper", {
   },
 });
 
-export {swiper}
+
+const swiper2 = new Swiper(".mySwiper2", {
+  direction: "vertical",
+  slidesPerView: "auto",
+  freeMode: true,
+  scrollbar: {
+    el: ".swiper-scrollbar",
+  },
+  mousewheel: true,
+});
+
+export {swiper1}
