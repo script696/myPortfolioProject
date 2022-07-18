@@ -32,10 +32,11 @@
           <img src="<%=require('./img/mask.jpg')%>" class="home__img-mask mask" alt="">
           <h2 class="home__title">Dream</h2>
           <ul class="home__navigation navigation">
-            <li class="navigation__item"><a href="#">Home</a></li>
-            <li class="navigation__item"><a href="#">About</a></li>
-            <li class="navigation__item"><a href="#">Package</a></li>
-            <li class="navigation__item"><a href="#">Contact</a></li>
+            <li class="navigation__item"><button type="button" id="home">Home</button></li>
+            <li class="navigation__item"><button type="button" id="about">About</button></li>
+            <li class="navigation__item"><button type="button" id="portfolio">Portfolio</button></li>
+            <li class="navigation__item"><button type="button" id="resume">Resume</button></li>
+            <li class="navigation__item"><button type="button" id="contacts">Contacts</button></li>
           </ul>
         </section>
       </div>
@@ -44,7 +45,8 @@
           <div class="swiper mySwiper2">
             <div class="swiper-wrapper">
               <div class="swiper-slide">
-                <section id="portfolio" class="portfolio">
+                <section id="about-section" class="section about"></section>
+                <section id="portfolio-section" class="section portfolio">
                   <div class="portfolio__container">
                     <h2 class="portfolio__title">
                       Мои недавние проекты
@@ -125,6 +127,8 @@
                     </ul>
                   </div>
                 </section>
+                <section id="resume-section" class="section resume"></section>
+                <section id="contacts-section" class="section contacts"></section>
               </div>
             </div>
             <div class="swiper-scrollbar"></div>

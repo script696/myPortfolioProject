@@ -23,4 +23,24 @@ const swiper2 = new Swiper(".mySwiper2", {
   mousewheel: true,
 });
 
-export {swiper1}
+
+const navigationConfig = {
+  navigatorSelector: '.navigation',
+  
+}
+const sectionsConfig = {
+  sectionsSelector: '.section',
+  
+}
+const projectsConfig = {
+  projectSelector: '.project',
+  
+}
+
+export {
+  swiper1,
+  swiper2,
+  navigationConfig,
+  projectsConfig,
+  sectionsConfig,
+ }
