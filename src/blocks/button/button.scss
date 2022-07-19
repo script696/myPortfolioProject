@@ -1,0 +1,19 @@
+.button {
+  cursor: pointer;
+  text-decoration: none;
+  padding: 0;
+  border: 0;
+  touch-action: manipulation;
+  white-space: nowrap;
+  display: inline-block;
+  text-align: center;
+  vertical-align: middle;
+  font-size: 2em;
+  letter-spacing: 3px;
+  padding: 12px 20px;
+  background-color: #f06449;
+  background: linear-gradient(270deg,#f06449,#ef3636);
+  color: #fff;
+  position: relative;
+  transition: all .3s;
+}

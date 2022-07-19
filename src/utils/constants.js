@@ -22,6 +22,15 @@ const swiper2 = new Swiper(".mySwiper2", {
   },
   mousewheel: true,
 });
+const swiper3 = new Swiper(".mySwiper3", {
+  direction: "vertical",
+  slidesPerView: "auto",
+  freeMode: true,
+  scrollbar: {
+    el: ".swiper-scrollbar",
+  },
+  mousewheel: true,
+});
 
 
 const navigationConfig = {
@@ -40,6 +49,7 @@ const projectsConfig = {
 export {
   swiper1,
   swiper2,
+  swiper3,
   navigationConfig,
   projectsConfig,
   sectionsConfig,

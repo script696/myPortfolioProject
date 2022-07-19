@@ -3,6 +3,7 @@ import "./index.scss";
 import {
   swiper1,
   swiper2,
+  swiper3,
   navigationConfig,
   projectsConfig,
   sectionsConfig,
@@ -48,6 +49,9 @@ navigationList.setEventListeners();
 const sectionsList = new SectionInfo(sectionsConfig);
 sectionsList.setSectionInfo();
 
+
+
+
 function swiperHandler(buttonId) {
   const mainContainerHeight = swiper2.slides[0].clientHeight
   const targetSectionOffsetY = sectionsList.getSectionOffsetY(
@@ -61,3 +65,4 @@ function swiperHandler(buttonId) {
     setTimeout(() => swiper2.setProgress(currentOffset, 1000), 1200);
   } 
 }
+

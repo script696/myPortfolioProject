@@ -1,0 +1,21 @@
+@use "../mixins/mixins";
+
+
+.stripe-context{
+  box-sizing: border-box;
+  list-style: none;
+  padding: 0 5vw 3vh 5vw;
+  display: flex;
+  justify-content: space-between;
+
+  p {
+    @include adaptiv-font(30, 23);
+
+    span{
+      color: rgb(155, 6, 6);
+      margin-right: 10px;
+    }
+  }
+
+
+}

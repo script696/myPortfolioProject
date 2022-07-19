@@ -1,0 +1,79 @@
+@use "../mixins/mixins";
+
+.main-slidproject {
+  background-color: #fff;
+  padding: 85px 0;
+  text-align: center;
+  overflow: hidden;
+
+  &__content {
+    max-width: 60%;
+    margin: auto;
+  }
+  &__title {
+    @include adaptiv-font(120, 100);
+    margin: 0 0 50px 0;
+    color: #000;
+  }
+  &__text {
+    @include adaptiv-font(28, 23);
+    margin: 0 0 50px 0;
+    color: #000;
+    text-align: justify;
+  }
+
+  &__gallery {
+    padding: 100px 50px;
+    background: #fff;
+    display: grid;
+    grid-template-columns: repeat(2, 50%);
+    grid-template-rows: auto auto;
+    grid-template-areas:
+      "img1 description1"
+      "description2 img2"
+      "img3 description3";
+  }
+
+  &__img1 {
+    grid-area: img1;
+    background: #f8f8f8;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 1000px;
+  }
+  &__img2 {
+    grid-area: img2;
+    
+  }
+  &__img3 {
+    grid-area: img3;
+    
+  }
+  &__description1 {
+    grid-area: description1;
+  }
+  &__description1 {
+    grid-area: description2;
+  }
+  &__description1 {
+    grid-area: description3;
+  }
+
+  &__img-wrapper{
+    position: relative;
+    width: 70%;
+    height: 90%;
+  }
+  &__code-img{
+    position: absolute;
+    top: -1%;
+    left: -5%;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 10px;
+    box-shadow: 0 20px 80px 0 rgb(0 0 0 / 45%);
+  }
+}
