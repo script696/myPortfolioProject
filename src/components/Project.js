@@ -1,0 +1,40 @@
+class Project {
+  constructor({ projectData, projectTemplateSelector, index }) {
+    this._projectData = projectData;
+    this._projectTemplateSelector = projectTemplateSelector;
+    this._projectIndex = `0${index + 1}`;
+  }
+
+  _getTemplate() {
+    const projectElement = document
+      .querySelector(this._projectTemplateSelector)
+      .content.querySelector(".project")
+      .cloneNode(true);
+
+    return projectElement;
+  }
+
+  generateProject() {
+    this._projectElement = this._getTemplate();
+
+    this._projectImg = this._projectElement.querySelector(
+      ".project__main-mask"
+    );
+    this._projectTitle = this._projectElement.querySelector(".project__title");
+    this._projectSubTitle = this._projectElement.querySelector(
+      ".project__title-description"
+    );
+    this._projectIndexElem = this._projectElement.querySelector(".mask-number__back");
+
+
+    this._projectImg.src = this._projectData.images.mainImg.link;
+    this._projectImg.alt = this._projectData.images.mainImg.alt;
+    this._projectTitle.textContent = this._projectData.texts.title;
+    this._projectSubTitle.textContent = this._projectData.texts.subtitle;
+    this._projectIndexElem.textContent = this._projectIndex;
+
+    return this._projectElement;
+  }
+}
+
+export default Project;

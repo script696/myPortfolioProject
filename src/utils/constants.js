@@ -1,3 +1,8 @@
+const projectTemplateSelector = '.project-template';
+const projectsListSelector = '.portfolio__projects'
+
+
+
 const swiper1 = new Swiper(".mySwiper1", {
   effect: "cube",
   grabCursor: true,
@@ -13,24 +18,7 @@ const swiper1 = new Swiper(".mySwiper1", {
 });
 
 
-const swiper2 = new Swiper(".mySwiper2", {
-  direction: "vertical",
-  slidesPerView: "auto",
-  freeMode: true,
-  scrollbar: {
-    el: ".swiper-scrollbar",
-  },
-  mousewheel: true,
-});
-const swiper3 = new Swiper(".mySwiper3", {
-  direction: "vertical",
-  slidesPerView: "auto",
-  freeMode: true,
-  scrollbar: {
-    el: ".swiper-scrollbar",
-  },
-  mousewheel: true,
-});
+
 
 
 const navigationConfig = {
@@ -48,9 +36,9 @@ const projectsConfig = {
 
 export {
   swiper1,
-  swiper2,
-  swiper3,
   navigationConfig,
   projectsConfig,
   sectionsConfig,
+  projectTemplateSelector,
+  projectsListSelector,
  }
