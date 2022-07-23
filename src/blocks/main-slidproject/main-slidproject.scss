@@ -1,22 +1,23 @@
 @use "../mixins/mixins";
+@use "../root/root";
 
 .main-slidproject {
   background-color: #fff;
-  padding: 85px 0;
   text-align: center;
   overflow: hidden;
 
   &__content {
+    padding: 80px 0;
     max-width: 60%;
     margin: auto;
   }
   &__title {
-    @include adaptiv-font(120, 100);
+    @include adaptiv-font(100, 80);
     margin: 0 0 50px 0;
-    color: #000;
+    color: $text-color-red;
   }
   &__text {
-    @include adaptiv-font(28, 23);
+    @include adaptiv-font(28, 19);
     margin: 0 0 50px 0;
     color: #000;
     text-align: justify;
@@ -24,7 +25,7 @@
 
   &__gallery {
     padding: 100px 50px;
-    background: #fff;
+    background: #f8f8f8;
     display: grid;
     grid-template-columns: repeat(2, 50%);
     grid-template-rows: auto auto;
@@ -32,48 +33,150 @@
       "img1 description1"
       "description2 img2"
       "img3 description3";
+    @include tablet {
+      grid-template-columns: 1fr;
+      gap: 50px;
+      grid-template-areas:
+        "description1"
+        "img1"
+        "description2"
+        "img2"
+        "description3"
+        "img3";
+    }
   }
 
   &__img1 {
     grid-area: img1;
-    background: #f8f8f8;
     display: flex;
     justify-content: center;
     align-items: center;
-    min-height: 1000px;
+    min-height: 700px;
+    @include desktop {
+      min-height: 600px;
+    }
+    @include laptop {
+      min-height: 500px;
+    }
   }
   &__img2 {
     grid-area: img2;
-    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 700px;
+    @include desktop {
+      min-height: 600px;
+    }
+    @include laptop {
+      min-height: 500px;
+    }
   }
   &__img3 {
     grid-area: img3;
-    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 700px;
+    @include desktop {
+      min-height: 600px;
+    }
+    @include laptop {
+      min-height: 500px;
+    }
   }
   &__description1 {
     grid-area: description1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
   }
-  &__description1 {
+  &__description2 {
     grid-area: description2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
   }
-  &__description1 {
+  &__description3 {
     grid-area: description3;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
   }
 
-  &__img-wrapper{
+  &__img-wrapper {
     position: relative;
     width: 70%;
     height: 90%;
+    @include desktop {
+      width: 80%;
+    }
   }
-  &__code-img{
+  &__code-img {
     position: absolute;
     top: -1%;
     left: -5%;
     width: 100%;
     height: 100%;
     object-fit: cover;
+    object-position: top;
+    border-radius: 10px;
+    box-shadow: 0 20px 80px 0 rgb(0 0 0 / 45%);
+    z-index: 2;
+    &_reverse {
+      left: auto;
+      right: -5%;
+    }
+  }
+  &__code-inner-img {
+    position: absolute;
+    top: 5%;
+    left: 5%;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
     object-position: center;
     border-radius: 10px;
     box-shadow: 0 20px 80px 0 rgb(0 0 0 / 45%);
+    z-index: 1;
+    &_reverse {
+      left: auto;
+      right: 5%;
+    }
+  }
+
+  &__gallery-title {
+    @include adaptiv-font(38, 30);
+    margin: 0 0 50px 0;
+    color: $text-color-red;
+  }
+
+  &__gallery-text {
+    @include adaptiv-font(25, 19);
+    margin: 0 0 50px 0;
+    color: #000;
+    max-width: 70%;
+  }
+
+  &__footer {
+    background: #16171b;
+    padding: 8% 0;
+  }
+
+  &__logo {
+    margin: 0 0 50px 0;
+  }
+
+  &__social-list {
+    margin: 0 auto 50px auto;
+  }
+
+  &__copyright {
+    @include adaptiv-font(15, 10);
+    margin: 0 0 50px 0;
+    color: #fff;
   }
 }

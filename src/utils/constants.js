@@ -1,4 +1,8 @@
+
+
+
 const projectTemplateSelector = '.project-template';
+const projectSlideTemplateSelector = '.projecSlide-template';
 const projectsListSelector = '.portfolio__projects'
 
 
@@ -41,4 +45,5 @@ export {
   sectionsConfig,
   projectTemplateSelector,
   projectsListSelector,
+  projectSlideTemplateSelector,
  }

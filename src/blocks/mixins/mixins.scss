@@ -1,4 +1,6 @@
 $maxWidth: 1980;
+
+
 @mixin adaptiv-font($pcSize, $mobSize) {
   $addSize: $pcSize - $mobSize;
   $maxWidth: $maxWidth - 320;
@@ -13,4 +15,25 @@ $maxWidth: 1980;
   right: $right;
 	bottom: $bottom;
 	left: $left;
+}
+
+
+
+
+@mixin desktop {
+  @media screen and (max-width: 1280px) {
+    @content;
+  }
+}
+
+@mixin laptop {
+  @media screen and (max-width: 992px) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media screen and (max-width: 768px) {
+    @content;
+  }
 }

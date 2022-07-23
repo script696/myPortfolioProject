@@ -1,62 +1,182 @@
+import mestoMainImg from "../img/portfolioProjects/mesto/mestoMainImg.png";
+import mestoCode1 from "../img/portfolioProjects/mesto/mestoCode1.png";
+import mestoCode2 from "../img/portfolioProjects/mesto/mestoCode2.png";
+import mestoCode3 from "../img/portfolioProjects/mesto/mestoCode3.png";
+import mestoInnerImg1 from "../img/portfolioProjects/mesto/mestoInnerImg1.png";
+import mestoInnerImg2 from "../img/portfolioProjects/mesto/mestoInnerImg2.png";
+import mestoInnerImg3 from "../img/portfolioProjects/mesto/mestoInnerImg3.png";
+
+import tuoTownMainImg from "../img/portfolioProjects/tuoTown/tuoTownMainImg.png";
+import tuoTownCode1 from "../img/portfolioProjects/tuoTown/tuoTownCode1.png";
+import tuoTownCode2 from "../img/portfolioProjects/tuoTown/tuoTownCode2.png";
+import tuoTownCode3 from "../img/portfolioProjects/tuoTown/tuoTownCode3.png";
+import tuoTownInnerImg1 from "../img/portfolioProjects/tuoTown/tuoTownInnerImg1.png";
+import tuoTownInnerImg2 from "../img/portfolioProjects/tuoTown/tuoTownInnerImg2.png";
+import tuoTownInnerImg3 from "../img/portfolioProjects/tuoTown/tuoTownInnerImg3.png";
+
+
+
 const projectMesto = {
   images: {
     mainImg: {
-      link: "http://niksemenov.ru/images/projectMesto/project1.png",
-      alt: "Проект Mesto главное изображение",
+      link: mestoMainImg,
+      alt: "Проект Mesto общее изображение",
+    },
+    codeOneImg: {
+      link: mestoCode1,
+      alt: "Фрагмент кода JS. Класс Card",
+    },
+    codeTwoImg: {
+      link: mestoCode2,
+      alt: "Фрагмент кода JS. Класс Api",
+    },
+    codeThreeImg: {
+      link: mestoCode3,
+      alt: "Фрагмент кода JS. Класс Validation",
+    },
+    innerImgOne: {
+      link: mestoInnerImg1,
+      alt: "Фрагмент кода JS. Класс Validation",
+    },
+    innerImgTwo: {
+      link: mestoInnerImg2,
+      alt: "Фрагмент кода JS. Класс Validation",
+    },
+    innerImgThree: {
+      link: mestoInnerImg3,
+      alt: "Фрагмент кода JS. Класс Validation",
     },
   },
   texts: {
-    title: "Mesto",
-    subtitle: "Социальная сеть",
-  },
-  buttons: {
-    seeMore: {
-      text: "Смотреть еще",
-    },
+    templateProjectTitle: "Mesto", //
+    templateProjectSubtitle:
+      "Интерактивная страница, куда можно добавлять фотографии, удалять их и ставить лайки.", 
+    templateProjectRole: "Фронтенд разработчки", 
+    templateProjectContext: "Обучающий проект", 
+    templateProjectPeriod: "Май-Июнь 2022", 
+    templateProjectAbout: `Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum
+    aspernatur magnam sapiente blanditiis eaque ipsum saepe eos fuga sint maiores!Lorem ipsum dolor sit
+    amet consectetur adipisicing elit. Nostrum
+    aspernatur magnam sapiente blanditiis eaque ipsum saepe eos fuga sint maiores!`, 
+    templateProjectDescriptionOneTitle: "Изучение ООП", 
+    templateProjectDescriptionTwoTitle: "Работа с API",
+    templateProjectDescriptionThreeTitle: "Валидация форм",
+    templateProjectDescriptionOneText:
+      "Изчение парадигмы ООП. Создание классов и принципов их взаимодействия",
+    templateProjectDescriptionTwoText:
+      "Работа с методами HTTP, принципов построения REST API",
+    templateProjectDescriptionThreeText:
+      "Разработка динамической валидации формы",
   },
 };
+
 const projectTuoTown = {
   images: {
     mainImg: {
-      link: "http://niksemenov.ru/images/projectMesto/project1.png",
-      alt: "Проект Mesto главное изображение",
+      link: tuoTownMainImg,
+      alt: "Проект Mesto общее изображение",
+    },
+    codeOneImg: {
+      link: tuoTownCode1,
+      alt: "Фрагмент кода JS. Класс Card",
+    },
+    codeTwoImg: {
+      link: tuoTownCode2,
+      alt: "Фрагмент кода JS. Класс Api",
+    },
+    codeThreeImg: {
+      link: tuoTownCode3,
+      alt: "Фрагмент кода JS. Класс Validation",
+    },
+    innerImgOne: {
+      link: tuoTownInnerImg1,
+      alt: "Фрагмент кода JS. Класс Validation",
+    },
+    innerImgTwo: {
+      link: tuoTownInnerImg2,
+      alt: "Фрагмент кода JS. Класс Validation",
+    },
+    innerImgThree: {
+      link: tuoTownInnerImg3,
+      alt: "Фрагмент кода JS. Класс Validation",
     },
   },
   texts: {
-    title: "TuoTown",
-    subtitle: "Первый самостоятельный лендинг",
-  },
-  buttons: {
-    seeMore: {
-      text: "Смотреть еще",
-    },
+    templateProjectTitle: "TuoTown", //
+    templateProjectSubtitle:
+      "Первый самостоятельный лендинг с всплывающем меню на чистом CSS!", 
+    templateProjectRole: "Фронтенд разработчки", 
+    templateProjectContext: "Обучающий проект", 
+    templateProjectPeriod: "Март 2022", 
+    templateProjectAbout: `Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum
+    aspernatur magnam sapiente blanditiis eaque ipsum saepe eos fuga sint maiores!Lorem ipsum dolor sit
+    amet consectetur adipisicing elit. Nostrum
+    aspernatur magnam sapiente blanditiis eaque ipsum saepe eos fuga sint maiores!`, 
+    templateProjectDescriptionOneTitle: "Первый SCSS опыт", 
+    templateProjectDescriptionTwoTitle: "Чекбокс для открытия меню",
+    templateProjectDescriptionThreeTitle: "Адаптивная верстка",
+    templateProjectDescriptionOneText:
+      "Впервые подключил SCSS в паре со сборщиком Prepros. Изучил синтаксис препроцессора (переменные, вложенность, миксины)",
+    templateProjectDescriptionTwoText:
+      "Сделал выплывающее меню с использованием скрытого чекбокса, без использования CSS",
+    templateProjectDescriptionThreeText:
+      "Выполнил адаптивную верстку с использованием flex && grid layout, медиазапросов",
   },
 };
 const projectRussianTravel = {
   images: {
     mainImg: {
-      link: "http://niksemenov.ru/images/projectMesto/project1.png",
-      alt: "Проект Russian Travel главное изображение",
+      link: mestoMainImg,
+      alt: "Проект Mesto общее изображение",
+    },
+    codeOneImg: {
+      link: mestoCode1,
+      alt: "Фрагмент кода JS. Класс Card",
+    },
+    codeTwoImg: {
+      link: mestoCode2,
+      alt: "Фрагмент кода JS. Класс Api",
+    },
+    codeThreeImg: {
+      link: mestoCode3,
+      alt: "Фрагмент кода JS. Класс Validation",
+    },
+    innerImgOne: {
+      link: mestoInnerImg1,
+      alt: "Фрагмент кода JS. Класс Validation",
+    },
+    innerImgTwo: {
+      link: mestoInnerImg2,
+      alt: "Фрагмент кода JS. Класс Validation",
+    },
+    innerImgThree: {
+      link: mestoInnerImg3,
+      alt: "Фрагмент кода JS. Класс Validation",
     },
   },
   texts: {
-    title: "Russian-travel",
-    subtitle: "Лендинг о путешествия",
-  },
-  buttons: {
-    seeMore: {
-      text: "Смотреть еще",
-    },
+    templateProjectTitle: "Mesto", //
+    templateProjectSubtitle:
+      "Интерактивная страница, куда можно добавлять фотографии, удалять их и ставить лайки.", 
+    templateProjectRole: "Фронтенд разработчки", 
+    templateProjectContext: "Обучающий проект", 
+    templateProjectPeriod: "Май-Июнь 2022", 
+    templateProjectAbout: `Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum
+    aspernatur magnam sapiente blanditiis eaque ipsum saepe eos fuga sint maiores!Lorem ipsum dolor sit
+    amet consectetur adipisicing elit. Nostrum
+    aspernatur magnam sapiente blanditiis eaque ipsum saepe eos fuga sint maiores!`, 
+    templateProjectDescriptionOneTitle: "Изучение ООП", 
+    templateProjectDescriptionTwoTitle: "Работа с API",
+    templateProjectDescriptionThreeTitle: "Валидация форм",
+    templateProjectDescriptionOneText:
+      "Изчение парадигмы ООП. Создание классов и принципов их взаимодействия",
+    templateProjectDescriptionTwoText:
+      "Работа с методами HTTP, принципов построения REST API",
+    templateProjectDescriptionThreeText:
+      "Разработка динамической валидации формы",
   },
 };
 
-const allProjects = [
-  projectMesto,
-  projectTuoTown,
-  projectRussianTravel,
-
-]
-
-
+const allProjects = [projectMesto, projectTuoTown, projectRussianTravel];
 
 export default allProjects;

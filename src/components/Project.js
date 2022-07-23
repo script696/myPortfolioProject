@@ -1,8 +1,16 @@
 class Project {
-  constructor({ projectData, projectTemplateSelector, index }) {
+  constructor({
+    projectData,
+    projectTemplateSelector,
+    index,
+    projectSlideElem,
+    addExtraSlide,
+  }) {
     this._projectData = projectData;
     this._projectTemplateSelector = projectTemplateSelector;
     this._projectIndex = `0${index + 1}`;
+    this._projectSlideElem = projectSlideElem;
+    this._addExtraSlide = addExtraSlide;
   }
 
   _getTemplate() {
@@ -43,7 +51,7 @@ class Project {
 
   _setEventListeners() {
     this._projectButtonElem.addEventListener("click", () => {
-      console.log("hi");
+      this._addExtraSlide(this._projectSlideElem);
     });
   }
 }
