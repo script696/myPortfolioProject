@@ -24,8 +24,11 @@ class Project {
     this._projectSubTitle = this._projectElement.querySelector(
       ".project__title-description"
     );
-    this._projectIndexElem = this._projectElement.querySelector(".mask-number__back");
+    this._projectIndexElem =
+      this._projectElement.querySelector(".mask-number__back");
 
+    this._projectButtonElem =
+      this._projectElement.querySelector(".project__button");
 
     this._projectImg.src = this._projectData.images.mainImg.link;
     this._projectImg.alt = this._projectData.images.mainImg.alt;
@@ -33,7 +36,15 @@ class Project {
     this._projectSubTitle.textContent = this._projectData.texts.subtitle;
     this._projectIndexElem.textContent = this._projectIndex;
 
+    this._setEventListeners();
+
     return this._projectElement;
+  }
+
+  _setEventListeners() {
+    this._projectButtonElem.addEventListener("click", () => {
+      console.log("hi");
+    });
   }
 }
 

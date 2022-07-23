@@ -1,19 +1,71 @@
+$telegram-bg-color: #337ab7;
+$black-bg-color: #000;
+$text-color: #fff;
+
+
+
 .button {
-  cursor: pointer;
-  text-decoration: none;
-  padding: 0;
-  border: 0;
-  touch-action: manipulation;
-  white-space: nowrap;
-  display: inline-block;
-  text-align: center;
-  vertical-align: middle;
-  font-size: 2em;
-  letter-spacing: 3px;
-  padding: 12px 20px;
-  background-color: #f06449;
-  background: linear-gradient(270deg,#f06449,#ef3636);
-  color: #fff;
   position: relative;
-  transition: all .3s;
+  color: $text-color;
+  border: none;
+  cursor: pointer;
+  width: 200px;
+  height: 50px;
+  transition: all 0.2s ease-in-out;
+  overflow: hidden;
+  border-radius: 5px;
+}
+
+.button_color_telegram {
+  background-color: #337ab7;
+}
+
+.button_color_github {
+  background-color: #000;
+}
+
+.button_color_default {
+  background-color: #000;
+}
+
+.contact__button_inactive {
+  transform: scale(0.5);
+}
+.button__text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, 200%);
+  transition: all 0.2s ease-in-out;
+}
+.button__icon {
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transition: all 0.2s ease-in-out;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.button_transform_horizontal .button__text {
+  transform: translate(-400%, -50%);
+}
+
+.contact__button:hover .button__text {
+  transform: translate(-50%, -50%);
+}
+
+.contact__button:hover .button__icon {
+  transform: translate(-50%, -200%);
+}
+
+.button_transform_horizontal:hover .button__icon {
+  transform: translate(250%, -50%) scale(1.2);
+}
+
+.button_transform_horizontal:hover .button__text {
+  transform: translate(-50%, -50%);
 }

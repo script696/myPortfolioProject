@@ -22,21 +22,13 @@ const menuToggle = document.querySelector(".menu-theme__menuToggle");
 const body = document.querySelector("body");
 const navigation = document.querySelector(".navigation");
 
-const handleProjectMasc = (entries) => {
-  entries.forEach((entry) => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add("project__insight-mask_deactivate");
-    }
-  });
-};
+
 
 const projectObserver = new IntersectionObserver(handleProjectMasc, {
   threshold: [0.9],
 });
 
-document
-  .querySelectorAll(".project__insight-mask")
-  .forEach((project) => projectObserver.observe(project));
+
 
 const navigationList = new Navigation(navigationConfig, swiperHandler);
 navigationList.setEventListeners();
@@ -53,6 +45,11 @@ const projectsListRenderer = new Renderer({
 });
 
 projectsListRenderer.rendererItems(allProjects);
+
+
+document
+  .querySelectorAll(".project__insight-mask")
+  .forEach((project) => projectObserver.observe(project));
 
 function createProject(projectData, index) {
   const project = new Project({ projectData, projectTemplateSelector, index });
@@ -73,3 +70,12 @@ function swiperHandler(buttonId) {
     setTimeout(() => swiper2.setProgress(currentOffset, 1000), 1200);
   }
 }
+
+
+function handleProjectMasc  (entries) {
+  entries.forEach((entry) => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add("project__insight-mask_deactivate");
+    }
+  });
+};
