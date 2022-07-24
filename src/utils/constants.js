@@ -21,6 +21,16 @@ const swiper1 = new Swiper(".mySwiper1", {
   },
 });
 
+var swiper2 = new Swiper(".mySwiper2", {
+  direction: "vertical",
+  slidesPerView: "auto",
+  freeMode: true,
+  scrollbar: {
+    el: ".swiper-scrollbar",
+  },
+  mousewheel: true,
+});
+
 
 
 
