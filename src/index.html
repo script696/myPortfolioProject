@@ -16,53 +16,103 @@
     <div class="swiper-wrapper">
       <div class="swiper-slide">
         <section class="home">
-          <header class="home__top">
-            <a href="#" class="home__logo">Logo</a>
-            <div class="home__menu-theme menu-theme">
-              <div class="menu-theme__btns menu-theme__dayNight">
-                <ion-icon class="menu-theme__icon" name="moon-outline"></ion-icon>
-                <ion-icon class="menu-theme__icon" name="sunny-outline"></ion-icon>
+          <nav class="home__nav navigation">
+            <h1 class="logo">Nikita</h1>
+            <div class="navigation__links">
+              <button class="navigation__link" name="home" type="button">Home</button>
+              <button class="navigation__link" name="about" type="button">About</button>
+              <button class="navigation__link" name="portfolio" type="button">Portfoilio</button>
+              <button class="navigation__link" name="resume" type="button">Resume</button>
+              <button class="navigation__link" name="contacts" type="button">Contacts</button>
+              <!-- <button class="navigation__burger" name="burger" type="button"> -->
+              <div id="nav-icon1" class="navigation__burger">
+                <span></span>
+                <span></span>
+                <span></span>
               </div>
-              <div class="menu-theme__btns menu-theme__menuToggle">
-                <ion-icon class="menu-theme__icon" name="menu-outline"></ion-icon>
-                <ion-icon class="menu-theme__icon" name="close-outline"></ion-icon>
-              </div>
+
+              </button>
             </div>
-          </header>
-          <video src="<%=require('./video/video.mp4')%>" class="home__video-mask" muted defaultMuted autoplay loop
-            playsinline type="mp4"></video>
-          <img src="<%=require('./img/mask.jpg')%>" class="home__img-mask mask" alt="">
-          <h2 class="home__title">Dream</h2>
-          <ul class="home__navigation navigation">
-            <li class="navigation__item"><button type="button" id="home">Home</button></li>
-            <li class="navigation__item"><button type="button" id="about">About</button></li>
-            <li class="navigation__item"><button type="button" id="portfolio">Portfolio</button></li>
-            <li class="navigation__item"><button type="button" id="resume">Resume</button></li>
-            <li class="navigation__item"><button type="button" id="contacts">Contacts</button></li>
-          </ul>
+            <div class="navigation__mobile">
+              <button class="navigation__link" name="home" type="button">Home</button>
+              <button class="navigation__link" name="about" type="button">About</button>
+              <button class="navigation__link" name="portfolio" type="button">Portfoilio</button>
+              <button class="navigation__link" name="resume" type="button">Resume</button>
+              <button class="navigation__link" name="contacts" type="button">Contacts</button>
+            </div>
+          </nav>
         </section>
       </div>
       <div class="swiper-slide">
-        <div class="swiper mySwiper2">
-          <div class="swiper-wrapper">
-            <div class="swiper-slide">
-                <section id="about-section" class="section about"></section>
-                <section id="portfolio-section" class="section portfolio">
-                  <div class="portfolio__container">
-                    <h2 class="portfolio__title">
-                      Мои недавние проекты
-                    </h2>
-                    <ul class="portfolio__projects"></ul>
-                  </div>
-                </section>
-                <section id="resume-section" class="section resume"></section>
-                <section id="contacts-section" class="section contacts"></section>
+        <div class="main">
+          <section id="about-section" class="section about"></section>
+          <section id="portfolio-section" class="section portfolio">
+            <div class="portfolio__container">
+              <h2 class="portfolio__title">
+                Мои недавние проекты
+              </h2>
+              <ul class="portfolio__projects"></ul>
             </div>
-          </div>
+          </section>
+          <section id="resume-section" class="section resume"></section>
+          <section id="contacts-section" class="section contacts">
+            <h1 class="contact__header">Contact</h1>
+            <div class="contact__wrapper">
+              <form action="#" class="contact__form">
+                <input type="text" class="contact__input" id="name" placeholder="COMPANY" name="name" value="">
+                <input type="text" class="contact__input" id="name" placeholder="CONTACT_DATA" name="name" value="">
+                <textarea class="contact__textarea" rows="10" placeholder="MESSAGE" name="message" required></textarea>
+                <button class="contact__button button-contact" id="submit" type="submit" value="SEND">
+                  <div class="button-contact__text">SEND</div>
+                  <div class="button-contact__icon">
+                    <i class="fa fa-paper-plane fa-lg" aria-hidden="true"></i>
+                  </div>
+                </button>
+              </form>
+              <div class="contact__information">
+                <ul class="contact__list list-contact">
+                  <li class="list-contact__item">
+                    <i class="fa fa-map-marker fa-2x" aria-hidden="true"></i>
+                    <span class="list-contact__text">Saint-Petersburg</span>
+                  </li>
+                  <li class="list-contact__item">
+                    <i class="fa fa-phone fa-2x" aria-hidden="true"></i>
+                    <a class="list-contact__link" href="tel:7-921-556-2686" title="Позвоните мне">
+                      <span class="list-contact__text">+7(921)556-26-86</span>
+                    </a>
+                  </li>
+                  <li class="list-contact__item">
+                    <i class="fa fa-envelope fa-2x" aria-hidden="true"></i>
+                    <a class="list-contact__link" href="mailto:script696@yandex.ru" title="Моя почта">
+                      <span class="list-contact__text">script696@yandex.ru</span>
+                    </a>
+                  </li>
+                </ul>
+                <ul class="social-media-list">
+                  <li><a href="#" target="_blank" class="contact-icon">
+                      <i class="fa fa-github" aria-hidden="true"></i></a>
+                  </li>
+                  <li><a href="#" target="_blank" class="contact-icon">
+                      <i class="fa fa-codepen" aria-hidden="true"></i></a>
+                  </li>
+                  <li><a href="#" target="_blank" class="contact-icon">
+                      <i class="fa fa-vk" aria-hidden="true"></i></a>
+                  </li>
+                  <li><a href="#" target="_blank" class="contact-icon">
+                      <i class="fa fa-instagram" aria-hidden="true"></i></a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </section>
         </div>
       </div>
     </div>
   </div>
+  <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r121/three.min.js"></script> -->
+  <!-- <script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.fog.min.js"></script> -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r121/three.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.birds.min.js"></script>
   <script src="https://use.fontawesome.com/20ab91acc4.js"></script>
   <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
   <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>

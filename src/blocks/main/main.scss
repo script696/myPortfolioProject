@@ -1,14 +1,18 @@
+.main{
+  position: static;
+  height: 100%;
+  overflow-y: scroll;
+  will-change: scroll-position;
+  -webkit-overflow-scrolling: touch;
+}
 .about{
-  height: 1000px;
+  height: 200px;
   background: #719c73;
 }
 .resume{
   height: 1000px;
   background: #8f3d3d;
 }
-.contacts{
-  height: 1000px;
-  background: #b31fab;
-}
+
 
 

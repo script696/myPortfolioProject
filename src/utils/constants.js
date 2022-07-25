@@ -1,11 +1,14 @@
+const navigation = document.querySelector(".navigation");
+const aboutSection = document.querySelector(".about");
+const portfolioSection = document.querySelector(".portfolio");
+const resumeSection = document.querySelector(".resume");
+const contactsSection = document.querySelector(".contacts");
+const navigationMobile = document.querySelector('.navigation__mobile')
 
 
-
-const projectTemplateSelector = '.project-template';
-const projectSlideTemplateSelector = '.projecSlide-template';
-const projectsListSelector = '.portfolio__projects'
-
-
+const projectTemplateSelector = ".project-template";
+const projectSlideTemplateSelector = ".projecSlide-template";
+const projectsListSelector = ".portfolio__projects";
 
 const swiper1 = new Swiper(".mySwiper1", {
   effect: "cube",
@@ -21,32 +24,42 @@ const swiper1 = new Swiper(".mySwiper1", {
   },
 });
 
-var swiper2 = new Swiper(".mySwiper2", {
-  direction: "vertical",
-  slidesPerView: "auto",
-  freeMode: true,
-  scrollbar: {
-    el: ".swiper-scrollbar",
-  },
-  mousewheel: true,
-});
-
-
-
 
 
 const navigationConfig = {
-  navigatorSelector: '.navigation',
-  
-}
+  navigatorSelector: ".navigation",
+  home: {
+    slideNum: 0,
+    sectionToScroll: null,
+  },
+  about: {
+    slideNum: 1,
+    sectionToScroll: aboutSection,
+  },
+  portfolio: {
+    slideNum: 1,
+    sectionToScroll: portfolioSection,
+
+  },
+  resume: {
+    slideNum: 1,
+    sectionToScroll: resumeSection
+
+  },
+  contacts: {
+    slideNum: 1,
+    sectionToScroll: contactsSection,
+
+  },
+  navigationMobile,
+};
+
 const sectionsConfig = {
-  sectionsSelector: '.section',
-  
-}
+  sectionsSelector: ".section",
+};
 const projectsConfig = {
-  projectSelector: '.project',
-  
-}
+  projectSelector: ".project",
+};
 
 export {
   swiper1,
@@ -56,4 +69,5 @@ export {
   projectTemplateSelector,
   projectsListSelector,
   projectSlideTemplateSelector,
- }
+  navigation,
+};

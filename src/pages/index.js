@@ -8,6 +8,7 @@ import {
   projectTemplateSelector,
   projectsListSelector,
   projectSlideTemplateSelector,
+  navigation,
 } from "../utils/constants.js";
 
 import allProjects from "../utils/projectsData.js";
@@ -17,10 +18,33 @@ import SectionInfo from "../components/SectionInfo.js";
 import Project from "../components/Project";
 import ProjectSlide from "../components/ProjectSlide.js";
 
-const dayNight = document.querySelector(".menu-theme__dayNight");
-const menuToggle = document.querySelector(".menu-theme__menuToggle");
-const body = document.querySelector("body");
-const navigation = document.querySelector(".navigation");
+// VANTA.FOG({
+//   el: ".home",
+//   mouseControls: true,
+//   touchControls: true,
+//   gyroControls: false,
+//   minHeight: 200.0,
+//   minWidth: 320,
+//   highlightColor: 0x5c5959,
+//   midtoneColor: 0xb1b1b1,
+//   lowlightColor: 0xa0a0c,
+// });
+
+VANTA.BIRDS({
+  el: ".home  ",
+  mouseControls: true,
+  touchControls: true,
+  gyroControls: false,
+  minHeight: 200.00,
+  minWidth: 200.00,
+  scale: 1.00,
+  scaleMobile: 1.00,
+  backgroundColor: 0x16171b,
+  color1: 0xcd1717,
+  color2: 0xc2ff00,
+  colorMode: "lerpGradient"
+})
+
 
 const projectObserver = new IntersectionObserver(handleProjectMasc, {
   threshold: [0.9],
@@ -29,12 +53,22 @@ const projectObserver = new IntersectionObserver(handleProjectMasc, {
 const sectionsList = new SectionInfo(sectionsConfig);
 sectionsList.setSectionInfo();
 
+const homeNavigation = new Navigation({navigationConfig, navigateSlider});
+homeNavigation.setEventListeners();
+
+function navigateSlider({slideNumber, sectionToScroll}) {
+  swiper1.slideTo(slideNumber, 1000);
+  setTimeout(()=> sectionToScroll?.scrollIntoView({block: 'start', behavior: 'smooth'}), 1000)
+}
+
 function renderPage() {
   const projectsContainer = document.querySelector(projectsListSelector);
 
   const projectsListElements = allProjects.map((projectData, index) => {
-
-    const newProjectSlide = new ProjectSlide({ projectData, projectSlideTemplateSelector });
+    const newProjectSlide = new ProjectSlide({
+      projectData,
+      projectSlideTemplateSelector,
+    });
     const projectSlideElem = newProjectSlide.generateProject();
 
     return new Project({
@@ -64,6 +98,11 @@ function addExtraSlide(projectSlideElem) {
 }
 
 renderPage();
+
+swiper1.on('slideResetTransitionEnd', ()=> {
+  if(swiper1.slides.length === 3) swiper1.removeSlide(2)
+})
+
 
 document
   .querySelectorAll(".project__insight-mask")

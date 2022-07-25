@@ -25,7 +25,6 @@ class ProjectSlide {
       .querySelectorAll(".slideProject__text-sel")
       .forEach((textElem) => {
         const test = this._projectData["texts"][textElem.id]
-        console.log(test)
         textElem.textContent = this._projectData["texts"][textElem.id]
       });
   }
