@@ -1,18 +1,17 @@
-.main{
+.main {
   position: static;
   height: 100%;
   overflow-y: scroll;
   will-change: scroll-position;
   -webkit-overflow-scrolling: touch;
+  background-color: #16171b;
+  background-image: linear-gradient(62deg, #16171b 0%, #303134 100%);
 }
-.about{
+.about {
   height: 200px;
-  background: #719c73;
+  // background: #719c73;
 }
-.resume{
+.resume {
   height: 1000px;
-  background: #8f3d3d;
+  // background: #8f3d3d;
 }
-
-
-

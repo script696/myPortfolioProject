@@ -40,8 +40,8 @@ class Project {
 
     this._projectImg.src = this._projectData.images.mainImg.link;
     this._projectImg.alt = this._projectData.images.mainImg.alt;
-    this._projectTitle.textContent = this._projectData.texts.title;
-    this._projectSubTitle.textContent = this._projectData.texts.subtitle;
+    this._projectTitle.textContent = this._projectData.texts.templateProjectTitle;
+    this._projectSubTitle.textContent = this._projectData.texts.templateProjectSubtitle;
     this._projectIndexElem.textContent = this._projectIndex;
 
     this._setEventListeners();

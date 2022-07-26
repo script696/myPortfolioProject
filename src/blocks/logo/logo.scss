@@ -1,6 +1,23 @@
-// @use "../mixins/mixins";
+@use "../mixins/mixins";
 
-// .logo {
-//   @include adaptiv-font(40, 15);
-//   letter-spacing: 0.5rem;
-// }
+
+.logo{
+&__wrapper{
+  height: 100%;
+  border: 2px solid #fff;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+  &__text{
+    @include adaptiv-font(50, 30);
+    line-height: 100%;
+    padding: 0 2vw;
+    margin: 0;
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: 700;
+  }
+}

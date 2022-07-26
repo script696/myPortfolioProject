@@ -1,6 +1,7 @@
 @import '../mixins/mixins'; 
 
 .portfolio {
+  padding: 100px 0;
   width: 100%;
   height: auto;
 
@@ -23,15 +24,15 @@
   }
 
   &__title {
-    @include adaptiv-font(40, 24);
-    margin: 0 0 50px 0;
-    font-family: var(--second-font);
-    font-weight: 700;
-    color: var(--color-main-text);
-    font-weight: 400;
-    letter-spacing: 3px;
-    line-height: 6.7rem;
+    @include adaptiv-font(55, 25);
     text-align: center;
+    margin: 0 0 70px 0;
+  }
+
+  &__subtitle{
+    @include adaptiv-font(30, 20);
+    text-align: center;
+    margin: 0 0 60px 0;
   }
 
   &__projects {
