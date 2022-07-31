@@ -1,4 +1,6 @@
 @import '../mixins/mixins'; 
+@import "../root/root";
+
 
 .portfolio {
   padding: 100px 0;
@@ -9,6 +11,7 @@
     max-width: 1170px;
     margin: auto;
     position: relative;
+    text-align: center;
   }
 
   &__container::before {
@@ -26,13 +29,15 @@
   &__title {
     @include adaptiv-font(55, 25);
     text-align: center;
+    color: $text-color-gold;
     margin: 0 0 70px 0;
   }
 
   &__subtitle{
     @include adaptiv-font(30, 20);
-    text-align: center;
-    margin: 0 0 60px 0;
+    display: inline-block;
+    border-bottom: 2px solid $text-color-gold;
+    margin: 0 0 50px 0;
   }
 
   &__projects {

@@ -1,0 +1,27 @@
+.list-contact {
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  margin: auto;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  gap: 60px;
+}
+
+.list-contacts__item {
+  color: #fff;
+}
+
+.list-contacts__text {
+  font-size: 25px;
+  margin: 0 0 0 30px;
+  color: #fff;
+}
+
+.list-contact__link {
+  text-decoration: none;
+  color: inherit;
+}

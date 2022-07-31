@@ -1,0 +1,67 @@
+@import "../mixins/mixins";
+@import "../root/root";
+
+.about {
+  box-sizing: border-box;
+  min-height: 700px;
+  max-width: 90%;
+  margin: auto;
+  padding: 80px 0;
+  background-color: #16171b;
+  background-image: linear-gradient(104deg, #111213 0%, #323234 100%);
+  border-radius: 30px;
+  box-shadow: 0 20px 80px 0 rgb(0 0 0 / 45%);
+
+
+  &__title {
+    @include adaptiv-font(55, 25);
+    color: $text-color-gold;
+    text-align: center;
+    margin: 0 0 70px 0;
+  }
+
+  &__subtitle {
+    @include adaptiv-font(30, 20);
+    display: inline-block;
+    border-bottom: 2px solid $text-color-gold;
+  }
+
+  &__container {
+    display: flex;
+  }
+
+  &__left-col {
+    flex: 1 1 50%;
+    text-align: center;
+  }
+  &__right-col {
+    flex: 1 1 50%;
+  }
+
+  &__text {
+    @include adaptiv-font(20, 13);
+    margin: auto;
+    max-width: 70%;
+    text-align: start;
+  }
+  &__avatar-wrapper {
+    position: relative;
+    clip-path: polygon(25% 0%, 100% 0%, 100% 100%, 25% 100%, 0% 50%);
+    &::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.3);
+    }
+  }
+  &__avatar {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    // border-radius: 50%;
+  }
+}

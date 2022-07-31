@@ -1,4 +1,6 @@
 @use "../mixins/mixins";
+@import "../root/root";
+
 
 .project {
   &__main {
@@ -26,15 +28,17 @@
 
   &__title {
     @include adaptiv-font(50, 22);
-    font-family: var(--second-font);
     line-height: 1.2rem;
     letter-spacing: 0.4rem;
     margin-bottom: 30px;
+    text-align: start;
+    color: $text-color-gold;
   }
 
   &__title-description {
     @include adaptiv-font(20, 14);
     margin-bottom: 30px;
+    text-align: start;
   }
 
   &__main-mask {
