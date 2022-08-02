@@ -9,6 +9,19 @@ const navigationMobile = document.querySelector('.navigation__mobile')
 const projectTemplateSelector = ".project-template";
 const projectSlideTemplateSelector = ".projecSlide-template";
 const projectsListSelector = ".portfolio__projects";
+const contactsFormSelector = '.contacts__form'
+
+const phpScriptLink = 'telegram.php'
+
+const formOptions = {
+  inputSelector: '.form__text',
+  submitButtonSelector: '.button-contact',
+  inactiveButtonClass: 'button_inactive',
+  inputErrorClass: 'form__text_type_error',
+  errorClass: 'form__text-error_active'
+}
+
+
 
 const swiper1 = new Swiper(".mySwiper1", {
   effect: "cube",
@@ -69,5 +82,8 @@ export {
   projectTemplateSelector,
   projectsListSelector,
   projectSlideTemplateSelector,
+  contactsFormSelector,
   navigation,
+  phpScriptLink,
+  formOptions,
 };

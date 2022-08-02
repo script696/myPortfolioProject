@@ -137,9 +137,22 @@
             <p class="contacts__subtitle">Заполните форму обратной связи или найдите в социальных сетях.</p>
             <div class="contacts__wrapper">
               <form action="#" class="contacts__form">
-                <input type="text" class="contacts__input" id="name" placeholder="COMPANY" name="name" value="">
-                <input type="text" class="contacts__input" id="name" placeholder="CONTACT_DATA" name="name" value="">
-                <textarea class="contacts__textarea" rows="10" placeholder="MESSAGE" name="message" required></textarea>
+                <label class="contacts__form-field">
+                  <input type="text" class="contacts__input form__text" id="name-input" placeholder="Название компании"
+                    name="name" value="" minlength="2" maxlength="200" required>
+                  <span class="contacts__form-error name-input-error">error</span>
+                </label>
+                <label class="contacts__form-field">
+                  <input type="text" class="contacts__input form__text" id="phone-input" placeholder="Контактные данные"
+                    name="phone" value="" minlength="2" maxlength="200" required>
+                  <span class="contacts__form-error phone-input-error">error</span>
+                </label>
+                <label class="contacts__form-field">
+                  <textarea class="contacts__textarea form__text" id="msg-input" rows="10" placeholder="Ваше сообщение"
+                    name="msg" minlength="2" maxlength="200" required></textarea>
+                  <span class="contacts__form-error msg-input-error">error</span>
+                </label>
+
                 <div class="contacts-btw-wrapper">
                   <button class="button button_transform_vertical button-contact button_color_telegram" id="submit"
                     type="submit">

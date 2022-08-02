@@ -9,6 +9,10 @@ import {
   projectsListSelector,
   projectSlideTemplateSelector,
   navigation,
+  contactsFormSelector,
+  phpScriptLink,
+  formOptions,
+
 } from "../utils/constants.js";
 
 import allProjects from "../utils/projectsData.js";
@@ -17,18 +21,9 @@ import Projects from "../components/Projects.js";
 import SectionInfo from "../components/SectionInfo.js";
 import Project from "../components/Project";
 import ProjectSlide from "../components/ProjectSlide.js";
+import Api from "../components/Api.js";
+import Form from "../components/Form.js";
 
-// VANTA.FOG({
-//   el: ".home",
-//   mouseControls: true,
-//   touchControls: true,
-//   gyroControls: false,
-//   minHeight: 200.0,
-//   minWidth: 320,
-//   highlightColor: 0x5c5959,
-//   midtoneColor: 0xb1b1b1,
-//   lowlightColor: 0xa0a0c,
-// });
 
 VANTA.BIRDS({
   el: ".home  ",
@@ -55,6 +50,17 @@ sectionsList.setSectionInfo();
 
 const homeNavigation = new Navigation({navigationConfig, navigateSlider});
 homeNavigation.setEventListeners();
+
+const telegramForm = new Form(contactsFormSelector, apiTelegramHandler, formOptions)
+telegramForm.setEventListeners()
+
+const api = new Api(phpScriptLink)
+
+
+
+function apiTelegramHandler (bodyData){
+  api.sentTelegramMessage(bodyData)
+}
 
 function navigateSlider({slideNumber, sectionToScroll}) {
   swiper1.slideTo(slideNumber, 1000);
