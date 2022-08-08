@@ -1,23 +1,18 @@
-@use "../mixins/mixins";
-
-
 .logo{
+  
 &__wrapper{
-  height: 100%;
-  border: 2px solid #fff;
-  border-radius: 10px;
+  height: 100px;
+  width: 100px;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-  &__text{
-    @include adaptiv-font(50, 30);
-    line-height: 100%;
-    padding: 0 2vw;
-    margin: 0;
-    text-align: center;
-    text-transform: uppercase;
-    font-weight: 700;
+  &__content{
+    width: 100%;
+    height: 100%;
+  }
+  &_cursor_pointer{
+    cursor: pointer;
   }
 }

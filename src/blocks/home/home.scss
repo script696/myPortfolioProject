@@ -1,10 +1,5 @@
-$dark-theme: #000;
-$light-theme: #fff;
-
-.page.dark {
-  $dark-theme: #fff;
-  $light-theme: #000;
-}
+@import "../mixins/mixins";
+@import "../root/root";
 
 .home {
   width: 100%;
@@ -15,12 +10,27 @@ $light-theme: #fff;
   justify-content: center;
   align-items: center;
 
+  &__content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+  }
   &__title {
-    position: relative;
-    z-index: 3;
-    font-size: 16vw;
-    color: #fff;
-    text-shadow: 0 20px 30px rgba(0, 0, 0, 0.2);
+    @include adaptiv-font(45, 20);
+    margin: 0 0 25px 0;
+  }
+
+  &__subtitle {
+    @include adaptiv-font(30, 15);
+    margin: 0 0 25px 0;
+  }
+
+  &__text {
+    @include adaptiv-font(35, 20);
+    color: $text-color-red;
+    margin: 0;
   }
 
   &__top {
@@ -35,17 +45,6 @@ $light-theme: #fff;
     box-sizing: border-box;
     // z-index: 100000;
     margin: auto;
-  }
-
-  &__logo {
-    position: relative;
-    display: inline-flex;
-    color: $dark-theme;
-    text-decoration: none;
-    font-size: 2em;
-    font-weight: 700;
-    letter-spacing: 0.02em;
-    text-transform: uppercase;
   }
 
   &__video-mask {
@@ -66,6 +65,12 @@ $light-theme: #fff;
     z-index: 0;
     user-select: none;
     mix-blend-mode: screen;
+  }
+
+  &__social-list {
+    position: absolute;
+    bottom: 2%;
+    right: 3%;
   }
 }
 

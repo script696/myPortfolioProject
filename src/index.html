@@ -16,16 +16,35 @@
     <div class="swiper-wrapper">
       <div class="swiper-slide">
         <section class="home">
-          <nav class="home__nav navigation">
+          <div class="home__content">
+            <h1 class="home__title">Привет, меня зовут Никита</h1>
+            <p class="home__subtitle">Сейчас я учусь, но скоро я стану настоящим</p>
+            <p class="home__text">Web Developer</p>
+          </div>
+          <ul class="home__social-list social-media-list social-media-list_vertical">
+            <li><a href="#" target="_blank" class="social-media-list__icon">
+                <i class="fa fa-github" aria-hidden="true"></i></a>
+            </li>
+            <li><a href="#" target="_blank" class="social-media-list__icon">
+                <i class="fa fa-telegram" aria-hidden="true"></i></a>
+            </li>
+            <li><a href="#" target="_blank" class="social-media-list__icon">
+                <i class="fa fa-twitter" aria-hidden="true"></i></a>
+            </li>
+            <li><a href="#" target="_blank" class="social-media-list__icon">
+                <i class="fa fa-instagram" aria-hidden="true"></i></a>
+            </li>
+          </ul>
+          <nav class="home__nav navigation navigation_home">
             <div class="logo logo__wrapper">
-              <h1 class="logo__text">Nikita</h1>
+              <img class="logo__content" src="<%=require('./img/logo/logo.svg')%>" alt="Буквы NS - логотип">
             </div>
             <div class="navigation__links">
-              <button class="navigation__link" name="home" type="button">Home</button>
-              <button class="navigation__link" name="about" type="button">About</button>
-              <button class="navigation__link" name="portfolio" type="button">Portfoilio</button>
-              <button class="navigation__link" name="resume" type="button">Resume</button>
-              <button class="navigation__link" name="contacts" type="button">Contacts</button>
+              <button class="navigation__link" name="home" type="button">Главная</button>
+              <button class="navigation__link" name="about" type="button">Обо мне</button>
+              <button class="navigation__link" name="portfolio" type="button">Портфолио</button>
+              <button class="navigation__link" name="resume" type="button">Резюме</button>
+              <button class="navigation__link" name="contacts" type="button">Контакты</button>
               <!-- <button class="navigation__burger" name="burger" type="button"> -->
               <div id="nav-icon1" class="navigation__burger">
                 <span></span>
@@ -47,6 +66,33 @@
       </div>
       <div class="swiper-slide">
         <div class="main">
+          <nav class="main__nav navigation navigation_with-scroll">
+            <div class="logo logo__wrapper">
+              <img class="logo__content" src="<%=require('./img/logo/logo.svg')%>" alt="Буквы NS - логотип">
+            </div>
+            <div class="navigation__links">
+              <button class="navigation__link" name="home" type="button">Главная</button>
+              <button class="navigation__link" name="about" type="button">Обо мне</button>
+              <button class="navigation__link" name="portfolio" type="button">Портфолио</button>
+              <button class="navigation__link" name="resume" type="button">Резюме</button>
+              <button class="navigation__link" name="contacts" type="button">Контакты</button>
+              <!-- <button class="navigation__burger" name="burger" type="button"> -->
+              <div id="nav-icon1" class="navigation__burger">
+                <span></span>
+                <span></span>
+                <span></span>
+              </div>
+
+              </button>
+            </div>
+            <div class="navigation__mobile">
+              <button class="navigation__link" name="home" type="button">Home</button>
+              <button class="navigation__link" name="about" type="button">About</button>
+              <button class="navigation__link" name="portfolio" type="button">Portfoilio</button>
+              <button class="navigation__link" name="resume" type="button">Resume</button>
+              <button class="navigation__link" name="contacts" type="button">Contacts</button>
+            </div>
+          </nav>
           <section id="about-section" class="section about">
             <h2 class="about__title">Обо мне</h2>
             <div class="about__container">
@@ -200,6 +246,11 @@
                 </div>
               </div>
             </div>
+            <div class="contacts__logo">
+              <div class="logo logo__wrapper logo_cursor_pointer">
+                <img class="logo__content" src="<%=require('./img/logo/logo.svg')%>" alt="Буквы NS - логотип">
+              </div>
+            </div>
           </section>
         </div>
       </div>
@@ -331,8 +382,8 @@
                     <i class="fa fa-instagram" aria-hidden="true"></i></a>
                 </li>
               </ul>
-              <p class="main-slidproject__copyright">2022 Semenov Nikita</p>
             </section>
+            
           </div>
         </article>
       </section>

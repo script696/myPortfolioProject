@@ -12,11 +12,14 @@ import {
   contactsFormSelector,
   phpScriptLink,
   formOptions,
+  homeNavigationElement,
+  mainNavigationElement,
 
 } from "../utils/constants.js";
 
 import allProjects from "../utils/projectsData.js";
 import Navigation from "../components/Navigation.js";
+import NavigationWithScroll from '../components/NavigationWithScroll.js'
 import Projects from "../components/Projects.js";
 import SectionInfo from "../components/SectionInfo.js";
 import Project from "../components/Project";
@@ -48,8 +51,11 @@ const projectObserver = new IntersectionObserver(handleProjectMasc, {
 const sectionsList = new SectionInfo(sectionsConfig);
 sectionsList.setSectionInfo();
 
-const homeNavigation = new Navigation({navigationConfig, navigateSlider});
+const homeNavigation = new Navigation({navigationConfig, element : homeNavigationElement, navigateSlider});
 homeNavigation.setEventListeners();
+
+const mainNavigation = new NavigationWithScroll({navigationConfig, element : mainNavigationElement, navigateSlider})
+mainNavigation.setEventListeners()
 
 const telegramForm = new Form(contactsFormSelector, apiTelegramHandler, formOptions)
 telegramForm.setEventListeners()
@@ -62,9 +68,13 @@ function apiTelegramHandler (bodyData){
   api.sentTelegramMessage(bodyData)
 }
 
-function navigateSlider({slideNumber, sectionToScroll}) {
+function navigateSlider({slideNumber, sectionToScroll, isMain}) {
   swiper1.slideTo(slideNumber, 1000);
-  setTimeout(()=> sectionToScroll?.scrollIntoView({block: 'start', behavior: 'smooth'}), 1000)
+
+  isMain 
+  ? sectionToScroll?.scrollIntoView({block: 'start', behavior: 'smooth'})
+  : setTimeout(()=> sectionToScroll?.scrollIntoView({block: 'start', behavior: 'smooth'}), 1000)
+  
 }
 
 function renderPage() {

@@ -3,7 +3,7 @@
 .navigation {
   box-sizing: border-box;
   padding: 0 30px;
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   width: 100%;
@@ -13,6 +13,11 @@
   align-items: center;
   z-index: 4;
   transition: 0.5s;
+  transform: translateY(0);
+
+  &_hide {
+    transform: translateY(-100%);
+  }
 
   &__links {
     flex: 1 1 auto;
@@ -23,16 +28,44 @@
   }
 
   &__link {
-    padding: 15px 0;
-    width: 100px;
-    text-align: center;
-    vertical-align: middle;
-    line-height: 100%;
+    @include adaptiv-font(30, 19);
+    position: relative;
     background: none;
-    border: 2px solid #fff;
     color: #fff;
     font-family: inherit;
+    border: none;
     cursor: pointer;
+    &::before {
+      content: "";
+      position: absolute;
+      bottom: -2px;
+      right: 0;
+      left: auto;
+      height: 3px;
+      width: 0;
+      background: $text-color-gold;
+      transition: all 0.25s cubic-bezier(0.694, 0.048, 0.335, 1) 0.15s;
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      bottom: -2px;
+      right: 0;
+      left: auto;
+      height: 3px;
+      width: 0;
+      background: $text-color-red;
+      transition: all 0.25s cubic-bezier(0.694, 0.048, 0.335, 1);
+    }
+    &:hover::before {
+      width: 100%;
+      left: 0;
+    }
+    &:hover::after {
+      width: 100%;
+      left: 0;
+    }
     @include tablet {
       display: none;
     }

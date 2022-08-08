@@ -1,9 +1,12 @@
 const navigation = document.querySelector(".navigation");
+const mainSection = document.querySelector(".main");
 const aboutSection = document.querySelector(".about");
 const portfolioSection = document.querySelector(".portfolio");
 const resumeSection = document.querySelector(".resume");
 const contactsSection = document.querySelector(".contacts");
 const navigationMobile = document.querySelector('.navigation__mobile')
+const homeNavigationElement = document.querySelector('.navigation_home')
+const mainNavigationElement = document.querySelector('.navigation_with-scroll')
 
 
 const projectTemplateSelector = ".project-template";
@@ -40,14 +43,14 @@ const swiper1 = new Swiper(".mySwiper1", {
 
 
 const navigationConfig = {
-  navigatorSelector: ".navigation",
+  // homeNavigatorSelector: ".navigation",
   home: {
     slideNum: 0,
     sectionToScroll: null,
   },
   about: {
     slideNum: 1,
-    sectionToScroll: aboutSection,
+    sectionToScroll: mainSection,
   },
   portfolio: {
     slideNum: 1,
@@ -65,6 +68,7 @@ const navigationConfig = {
 
   },
   navigationMobile,
+  mainSection,
 };
 
 const sectionsConfig = {
@@ -86,4 +90,6 @@ export {
   navigation,
   phpScriptLink,
   formOptions,
+  homeNavigationElement,
+  mainNavigationElement,
 };
