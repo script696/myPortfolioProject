@@ -47,8 +47,10 @@ $text-color: #fff;
   top: 50%;
   left: 50%;
   transform: translate(-50%, 200%);
-  transition: all 0.2s ease-in-out;
+  transition: all 0.2s linear;
 }
+
+
 .button__icon {
   position: absolute;
   width: 25px;
@@ -56,11 +58,15 @@ $text-color: #fff;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  transition: all 0.2s ease-in-out;
+  transition: all 0.2s linear;
   display: flex;
   justify-content: center;
   align-items: center;
 }
+
+
+
+
 .button_transform_horizontal .button__text {
   transform: translate(-800%, -50%);
 }
@@ -86,3 +92,4 @@ $text-color: #fff;
 .button_transform_horizontal:hover .button__text {
   transform: translate(-50%, -50%);
 }
+

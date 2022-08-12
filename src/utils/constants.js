@@ -26,21 +26,35 @@ const formOptions = {
 
 
 
-const swiper1 = new Swiper(".mySwiper1", {
-  effect: "cube",
+// const swiper1 = new Swiper(".mySwiper1", {
+//   effect: "cube",
+//   grabCursor: true,
+//   cubeEffect: {
+//     shadow: false,
+//     slideShadows: true,
+//     shadowOffset: 20,
+//     shadowScale: 0.94,
+//   },
+//   pagination: {
+//     el: ".swiper-pagination",
+//   },
+// });
+
+
+var swiper1 = new Swiper(".mySwiper1", {
+  effect: "coverflow",
   grabCursor: true,
-  cubeEffect: {
-    shadow: false,
-    slideShadows: true,
-    shadowOffset: 20,
-    shadowScale: 0.94,
+  centeredSlides: true,
+  slidesPerView: "auto",
+  coverflowEffect: {
+    rotate: 50,
+    stretch: 0,
+    depth: 700,
+    modifier: 1,
+    slideShadows: false,
   },
-  pagination: {
-    el: ".swiper-pagination",
-  },
+ 
 });
-
-
 
 const navigationConfig = {
   // homeNavigatorSelector: ".navigation",
@@ -50,7 +64,7 @@ const navigationConfig = {
   },
   about: {
     slideNum: 1,
-    sectionToScroll: mainSection,
+    sectionToScroll: aboutSection,
   },
   portfolio: {
     slideNum: 1,
@@ -67,8 +81,10 @@ const navigationConfig = {
     sectionToScroll: contactsSection,
 
   },
+
+
   navigationMobile,
-  mainSection,
+  mainSection: mainSection,
 };
 
 const sectionsConfig = {
@@ -92,4 +108,5 @@ export {
   formOptions,
   homeNavigationElement,
   mainNavigationElement,
+  aboutSection,
 };

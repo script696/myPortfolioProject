@@ -12,22 +12,27 @@
   border-radius: 30px;
   box-shadow: 0 20px 80px 0 rgb(0 0 0 / 45%);
 
-
   &__title {
     @include adaptiv-font(55, 25);
     color: $text-color-gold;
     text-align: center;
     margin: 0 0 70px 0;
+    font-family: $font-family-alternate;
+
   }
 
   &__subtitle {
     @include adaptiv-font(30, 20);
     display: inline-block;
     border-bottom: 2px solid $text-color-gold;
+    font-family: $font-family-alternate;
+    color: $text-color-red;
+
   }
 
   &__container {
     display: flex;
+    overflow: hidden;
   }
 
   &__left-col {
@@ -36,6 +41,11 @@
   }
   &__right-col {
     flex: 1 1 50%;
+    transform: translateX(100%);
+    transition: 0.3s ease-in;
+    &_active {
+      transform: translateX(0);
+    }
   }
 
   &__text {

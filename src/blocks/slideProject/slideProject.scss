@@ -2,6 +2,7 @@
 
 .slideProject {
   box-sizing: border-box;
+  width: 100%;
   &__top {
     height: 90vh;
     max-height: 950px;
@@ -46,7 +47,7 @@
   }
 
   &__subtitle {
-    @include adaptiv-font(34, 18);
+    @include adaptiv-font(30, 20);
     margin: 0;
   }
   &__stripe {

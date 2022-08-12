@@ -1,3 +1,5 @@
+import logo from "../img/logo/logo.svg";
+
 import mestoMainImg from "../img/portfolioProjects/mesto/mestoMainImg.png";
 import mestoCode1 from "../img/portfolioProjects/mesto/mestoCode1.png";
 import mestoCode2 from "../img/portfolioProjects/mesto/mestoCode2.png";
@@ -18,6 +20,10 @@ import tuoTownInnerImg3 from "../img/portfolioProjects/tuoTown/tuoTownInnerImg3.
 
 const projectMesto = {
   images: {
+    logo: {
+      link: logo,
+      alt: 'Логотип NS'
+    },
     mainImg: {
       link: mestoMainImg,
       alt: "Проект Mesto общее изображение",
@@ -72,6 +78,10 @@ const projectMesto = {
 
 const projectTuoTown = {
   images: {
+    logo: {
+      link: logo,
+      alt: 'Логотип NS'
+    },
     mainImg: {
       link: tuoTownMainImg,
       alt: "Проект Mesto общее изображение",
@@ -125,6 +135,10 @@ const projectTuoTown = {
 };
 const projectRussianTravel = {
   images: {
+    logo: {
+      link: logo,
+      alt: 'Логотип NS'
+    },
     mainImg: {
       link: mestoMainImg,
       alt: "Проект Mesto общее изображение",

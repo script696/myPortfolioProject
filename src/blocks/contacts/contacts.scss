@@ -3,7 +3,7 @@
 
 .contacts {
   box-sizing: border-box;
-  padding: 80px 0;
+  padding: 80px 0 40px 0;
   max-width: 90%;
   text-align: center;
   margin: auto;
@@ -17,7 +17,7 @@
     display: flex;
     justify-content: space-between;
     margin: auto;
-    padding: 20px 20px 50px 20px;
+    padding: 20px 20px 100px 20px;
     position: relative;
     max-width: 840px;
     gap: 50px;
@@ -39,6 +39,8 @@
     text-align: center;
     color: $text-color-gold;
     margin: 0 0 70px 0;
+    font-family: $font-family-alternate;
+
   }
 
   &__subtitle {
@@ -46,6 +48,9 @@
     display: inline-block;
     border-bottom: 2px solid $text-color-gold;
     margin: 0 0 80px 0;
+    font-family: $font-family-alternate;
+    color: $text-color-red;
+
   }
   &__information {
     width: 50%;
@@ -112,11 +117,34 @@
     opacity: 0;
   }
   &__logo {
+    
+    margin: 0 0 40px 0;
     display: flex;
     justify-content: center;
     align-items: center;
   }
+  &__copyright {
+    box-sizing: border-box;
+    padding: 0 5%;
+    display: flex;
+    justify-content: space-between;
+  }
+  & svg {
+    width: 20px;
+    height: 20px;
+  }
+  &__copyright-text {
+    letter-spacing: 0.1rem;
+  }
+
+
 }
+.contacts-icon{
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
 
 .form__text-error_active {
   opacity: 1;
@@ -138,4 +166,10 @@
 .fa-envelope,
 .fa-code {
   transform: scale(0.8);
+}
+.testBtn {
+  
+  width: 200px;
+  height: 100px;
+  background-color: red;
 }

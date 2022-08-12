@@ -16,6 +16,7 @@
     font-size: 22px;
     box-sizing: border-box;
     position: relative;
+    z-index: 999;
     display: inline-block;
     height: 60px;
     width: 60px;
@@ -26,19 +27,6 @@
     cursor: pointer;
     transition: all 0.2s ease-in-out;
 
-    &::after {
-      content: "";
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 60px;
-      height: 60px;
-      line-height: 60px;
-      border-radius: 50%;
-      opacity: 0;
-      box-shadow: 0 0 0 1px #fff;
-      transition: all 0.2s ease-in-out;
-    }
 
     &:hover {
       background-color: #fff;
@@ -61,20 +49,7 @@
       background-color: transparent;
       text-decoration: none;
       color: #fff;
-
-      &::after {
-        content: "";
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 60px;
-        height: 60px;
-        line-height: 60px;
-        border-radius: 50%;
-        opacity: 0;
-        box-shadow: 0 0 0 1px #fff;
-        transition: all 0.2s ease-in-out;
-      }
+  
     }
   }
 

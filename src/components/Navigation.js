@@ -1,19 +1,21 @@
 class Navigation {
-  constructor({ navigationConfig, navigateSlider, element }) {
+  constructor({ navigationConfig, navigateSlider, element, mainSection, scrollToSec }) {
     this._navigationConfig = navigationConfig;
     this._navigateSlider = navigateSlider;
     this._element = element;
-    this._mainSection = this._navigationConfig.mainSection;
+    this._mainSection = mainSection;
+    this._sectionToScroll = scrollToSec;
     this._isMainNav = element.matches(".main__nav");
     this._navigationButtons =
       this._element.querySelectorAll(".navigation__link");
     this._burgerButton = this._element.querySelector(".navigation__burger");
     this._navigationMobile = this._navigationConfig.navigationMobile;
     this._scrollPos = 0;
+
+
   }
 
   setEventListeners() {
-    this._mainSection.addEventListener("scroll", () => {this._handleMenu()});
 
     this._navigationButtons.forEach((button) => {
       button.addEventListener("click", () => {
@@ -34,13 +36,7 @@ class Navigation {
     });
   }
 
-  _handleMenu() {
-    this._st = this._mainSection.scrollTop;
-    this._st > this._scrollPos
-      ? this._element.classList.add("navigation_hide")
-      : this._element.classList.remove("navigation_hide");
-    this._scrollPos = this._st;
-  }
+ 
 }
 
 export default Navigation;

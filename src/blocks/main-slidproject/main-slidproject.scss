@@ -12,7 +12,7 @@
     margin: auto;
   }
   &__title {
-    @include adaptiv-font(100, 80);
+    @include adaptiv-font(55, 25);
     margin: 0 0 50px 0;
     color: $text-color-red;
   }
@@ -178,5 +178,11 @@
     @include adaptiv-font(15, 10);
     margin: 0 0 50px 0;
     color: #fff;
+  }
+  &__media-list-wrapper{
+    flex: 1 1 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 }

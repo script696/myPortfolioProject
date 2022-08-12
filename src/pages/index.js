@@ -14,12 +14,12 @@ import {
   formOptions,
   homeNavigationElement,
   mainNavigationElement,
-
+  aboutSection,
 } from "../utils/constants.js";
 
 import allProjects from "../utils/projectsData.js";
 import Navigation from "../components/Navigation.js";
-import NavigationWithScroll from '../components/NavigationWithScroll.js'
+import NavigationWithScroll from "../components/NavigationWithScroll.js";
 import Projects from "../components/Projects.js";
 import SectionInfo from "../components/SectionInfo.js";
 import Project from "../components/Project";
@@ -27,54 +27,70 @@ import ProjectSlide from "../components/ProjectSlide.js";
 import Api from "../components/Api.js";
 import Form from "../components/Form.js";
 
-
 VANTA.BIRDS({
   el: ".home  ",
   mouseControls: true,
   touchControls: true,
   gyroControls: false,
-  minHeight: 200.00,
-  minWidth: 200.00,
-  scale: 1.00,
-  scaleMobile: 1.00,
+  minHeight: 200.0,
+  minWidth: 200.0,
+  scale: 1.0,
+  scaleMobile: 1.0,
   backgroundColor: 0x16171b,
   color1: 0xcd1717,
   color2: 0xc2ff00,
-  colorMode: "lerpGradient"
-})
-
-
-const projectObserver = new IntersectionObserver(handleProjectMasc, {
-  threshold: [0.9],
+  colorMode: "lerpGradient",
 });
+
+
 
 const sectionsList = new SectionInfo(sectionsConfig);
 sectionsList.setSectionInfo();
 
-const homeNavigation = new Navigation({navigationConfig, element : homeNavigationElement, navigateSlider});
+const homeNavigation = new Navigation({
+  navigationConfig,
+  element: homeNavigationElement,
+  navigateSlider,
+});
 homeNavigation.setEventListeners();
 
-const mainNavigation = new NavigationWithScroll({navigationConfig, element : mainNavigationElement, navigateSlider})
-mainNavigation.setEventListeners()
+const mainSection = document.querySelector(".main");
 
-const telegramForm = new Form(contactsFormSelector, apiTelegramHandler, formOptions)
-telegramForm.setEventListeners()
+const mainNavigation = new NavigationWithScroll({
+  navigationConfig,
+  element: mainNavigationElement,
+  navigateSlider,
+  mainSection,
+  scrollToSec: aboutSection,
+});
+mainNavigation.setEventListeners();
 
-const api = new Api(phpScriptLink)
+const telegramForm = new Form(
+  contactsFormSelector,
+  apiTelegramHandler,
+  formOptions
+);
+telegramForm.setEventListeners();
 
+const api = new Api(phpScriptLink);
 
-
-function apiTelegramHandler (bodyData){
-  api.sentTelegramMessage(bodyData)
+function apiTelegramHandler(bodyData) {
+  api.sentTelegramMessage(bodyData);
 }
 
-function navigateSlider({slideNumber, sectionToScroll, isMain}) {
+function navigateSlider({ slideNumber, sectionToScroll, isMain }) {
   swiper1.slideTo(slideNumber, 1000);
 
-  isMain 
-  ? sectionToScroll?.scrollIntoView({block: 'start', behavior: 'smooth'})
-  : setTimeout(()=> sectionToScroll?.scrollIntoView({block: 'start', behavior: 'smooth'}), 1000)
-  
+  isMain
+    ? sectionToScroll?.scrollIntoView({ block: "start", behavior: "smooth" })
+    : setTimeout(
+        () =>
+          sectionToScroll?.scrollIntoView({
+            block: "start",
+            behavior: "smooth",
+          }),
+        1000
+      );
 }
 
 function renderPage() {
@@ -84,6 +100,9 @@ function renderPage() {
     const newProjectSlide = new ProjectSlide({
       projectData,
       projectSlideTemplateSelector,
+      navigationConfig,
+      navigateSlider,
+      mainSection,
     });
     const projectSlideElem = newProjectSlide.generateProject();
 
@@ -107,6 +126,17 @@ function handleProjectMasc(entries) {
     }
   });
 }
+const aboutRightCol = document.querySelector('.about__right-col')
+
+function handleAboutSecAnimation(entries){
+  entries.forEach((entry) => {
+    if (entry.isIntersecting) {
+      console.log('hi');
+      
+      aboutRightCol.classList.add("about__right-col_active");
+    }
+  });
+}
 
 function addExtraSlide(projectSlideElem) {
   swiper1.appendSlide(projectSlideElem);
@@ -115,9 +145,24 @@ function addExtraSlide(projectSlideElem) {
 
 renderPage();
 
-swiper1.on('slideResetTransitionEnd', ()=> {
-  if(swiper1.slides.length === 3) swiper1.removeSlide(2)
-})
+swiper1.on("slideResetTransitionEnd", () => {
+  if (swiper1.slides.length === 3) swiper1.removeSlide(2);
+});
+
+
+
+const sectionAboutObserver = new IntersectionObserver(handleAboutSecAnimation, {
+  threshold: [0.9],
+});
+
+
+const projectObserver = new IntersectionObserver(handleProjectMasc, {
+  threshold: [0.9],
+});
+
+
+
+sectionAboutObserver.observe(aboutSection)
 
 
 document

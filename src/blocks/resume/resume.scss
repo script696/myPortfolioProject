@@ -19,12 +19,17 @@
     text-align: center;
     color: $text-color-gold;
     margin: 0 0 70px 0;
+    font-family: $font-family-alternate;
+
   }
   &__subtitle {
     @include adaptiv-font(30, 20);
     display: inline-block;
     border-bottom: 2px solid $text-color-gold;
     margin: 0 0 60px 0;
+    font-family: $font-family-alternate;
+    color: $text-color-red;
+
   }
 }
 

@@ -6,6 +6,11 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  position: relative;
+  &:hover .logo__help-popup{
+    opacity: 1;
+    visibility: visible;
+  }
 }
 
   &__content{
@@ -14,5 +19,27 @@
   }
   &_cursor_pointer{
     cursor: pointer;
+  }
+  &__help-popup{
+    opacity: 0;
+    visibility: hidden;
+    transition: .5s;
+    box-sizing: border-box;
+    padding: 10% 0 0 0;
+    position: absolute;
+    top: -80px;
+    left: -80px;
+    width: 100px;
+    height: 100px;
+    background: #fff;
+    color: #000;
+    clip-path: polygon(0% 0%, 100% 0%, 100% 75%, 75% 75%, 75% 100%, 50% 75%, 0% 75%);
+  }
+
+  &_style_button{
+    box-sizing: border-box;
+    border: none;
+    background: none;
+    padding: 0;
   }
 }

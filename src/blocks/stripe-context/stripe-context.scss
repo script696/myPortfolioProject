@@ -17,12 +17,12 @@
     gap: 10px;
   }
   span {
-    @include adaptiv-font(40, 16);
+    @include adaptiv-font(30, 20);
     color: $text-color-gold;
     margin-right: 10px;
     font-weight: 700;
   }
   p {
-    @include adaptiv-font(37, 15);
+    @include adaptiv-font(30, 20);
   }
 }
