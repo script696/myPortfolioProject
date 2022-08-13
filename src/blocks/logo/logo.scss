@@ -1,29 +1,28 @@
-.logo{
-  
-&__wrapper{
-  height: 100px;
-  width: 100px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  position: relative;
-  &:hover .logo__help-popup{
-    opacity: 1;
-    visibility: visible;
+.logo {
+  &__wrapper {
+    height: 100px;
+    width: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    &:hover .logo__help-popup {
+      opacity: 1;
+      visibility: visible;
+    }
   }
-}
 
-  &__content{
+  &__content {
     width: 100%;
     height: 100%;
   }
-  &_cursor_pointer{
+  &_cursor_pointer {
     cursor: pointer;
   }
-  &__help-popup{
+  &__help-popup {
     opacity: 0;
     visibility: hidden;
-    transition: .5s;
+    transition: 0.5s;
     box-sizing: border-box;
     padding: 10% 0 0 0;
     position: absolute;
@@ -33,13 +32,42 @@
     height: 100px;
     background: #fff;
     color: #000;
-    clip-path: polygon(0% 0%, 100% 0%, 100% 75%, 75% 75%, 75% 100%, 50% 75%, 0% 75%);
+    clip-path: polygon(
+      0% 0%,
+      100% 0%,
+      100% 75%,
+      75% 75%,
+      75% 100%,
+      50% 75%,
+      0% 75%
+    );
   }
 
-  &_style_button{
+  &_style_button {
     box-sizing: border-box;
     border: none;
     background: none;
     padding: 0;
+  }
+
+  @include desktop {
+    height: 80px;
+    width: 80px;
+  }
+  @include laptop {
+    height: 70px;
+    width: 70px;
+  }
+  @include tablet {
+    height: 60px;
+    width: 60px;
+  }
+  @include mobile {
+    height: 50px;
+    width: 50px;
+  }
+  @include mobileS {
+    height: 40px;
+    width: 40px;
   }
 }

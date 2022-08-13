@@ -15,6 +15,9 @@ import {
   homeNavigationElement,
   mainNavigationElement,
   aboutSection,
+  formLoaderMask,
+  formSuccesMsg,
+  formRejectMsg,
 } from "../utils/constants.js";
 
 import allProjects from "../utils/projectsData.js";
@@ -37,11 +40,13 @@ VANTA.BIRDS({
   scale: 1.0,
   scaleMobile: 1.0,
   backgroundColor: 0x16171b,
-  color1: 0xcd1717,
-  color2: 0xc2ff00,
+  color1: 0xecb614,
+  color2: 0xb1361e,
+  speedLimit: 0.50,
+  birdSize: 0.50,
+  quantity: 3.0,
   colorMode: "lerpGradient",
 });
-
 
 
 const sectionsList = new SectionInfo(sectionsConfig);
@@ -74,8 +79,27 @@ telegramForm.setEventListeners();
 
 const api = new Api(phpScriptLink);
 
-function apiTelegramHandler(bodyData) {
-  api.sentTelegramMessage(bodyData);
+
+
+async function apiTelegramHandler(bodyData) {
+  formLoaderMask.classList.add('contacts__form-status_active')
+
+  try{
+    const res = await api.sentTelegramMessage(bodyData)
+
+    res.ok 
+    ? formSuccesMsg.classList.add('contacts__loader-sucess_active')
+    : formRejectMsg.classList.add('contacts__loader-reject_active')
+  } catch (err){
+    console.log(err)
+  } finally{
+    setTimeout(()=>{
+      formLoaderMask.classList.remove('contacts__form-status_active')
+      formSuccesMsg.classList.remove('contacts__loader-sucess_active')
+    formRejectMsg.classList.remove('contacts__loader-reject_active')
+    telegramForm.resetForm()
+    },2000)
+  }
 }
 
 function navigateSlider({ slideNumber, sectionToScroll, isMain }) {
@@ -91,6 +115,11 @@ function navigateSlider({ slideNumber, sectionToScroll, isMain }) {
           }),
         1000
       );
+
+  if (swiper1.slides.length === 3)
+    setTimeout(() => {
+      swiper1.removeSlide(2);
+    }, 1000);
 }
 
 function renderPage() {
@@ -126,13 +155,11 @@ function handleProjectMasc(entries) {
     }
   });
 }
-const aboutRightCol = document.querySelector('.about__right-col')
+const aboutRightCol = document.querySelector(".about__right-col");
 
-function handleAboutSecAnimation(entries){
+function handleAboutSecAnimation(entries) {
   entries.forEach((entry) => {
     if (entry.isIntersecting) {
-      console.log('hi');
-      
       aboutRightCol.classList.add("about__right-col_active");
     }
   });
@@ -149,21 +176,15 @@ swiper1.on("slideResetTransitionEnd", () => {
   if (swiper1.slides.length === 3) swiper1.removeSlide(2);
 });
 
-
-
 const sectionAboutObserver = new IntersectionObserver(handleAboutSecAnimation, {
   threshold: [0.9],
 });
-
 
 const projectObserver = new IntersectionObserver(handleProjectMasc, {
   threshold: [0.9],
 });
 
-
-
-sectionAboutObserver.observe(aboutSection)
-
+sectionAboutObserver.observe(aboutSection);
 
 document
   .querySelectorAll(".project__insight-mask")

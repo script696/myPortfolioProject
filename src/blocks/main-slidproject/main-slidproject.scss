@@ -12,7 +12,8 @@
     margin: auto;
   }
   &__title {
-    @include adaptiv-font(55, 25);
+    @include adaptiv-font(60, 35);
+    font-family: $font-family-alternate;
     margin: 0 0 50px 0;
     color: $text-color-red;
   }
@@ -150,8 +151,9 @@
 
   &__gallery-title {
     @include adaptiv-font(38, 30);
-    margin: 0 0 50px 0;
+    font-family: $font-family-alternate;
     color: $text-color-red;
+    margin: 0 0 50px 0;
   }
 
   &__gallery-text {

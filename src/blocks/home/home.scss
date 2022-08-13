@@ -19,20 +19,18 @@
   }
   &__title {
     @include adaptiv-font(70, 30);
-    margin: 0 0 25px 0;
     font-family: $font-family-alternate;
-    
+    margin: 0 0 25px 0;
   }
 
   &__subtitle {
     @include adaptiv-font(30, 15);
-    margin: 0 0 25px 0;
     font-family: $font-family-alternate;
-
+    margin: 0 0 25px 0;
   }
 
   &__text {
-    @include adaptiv-font(45, 25);
+    @include adaptiv-font(50, 25);
     color: $text-color-red;
     margin: 0;
     font-weight: 700;
@@ -48,7 +46,6 @@
     width: 100%;
     padding: 40px 5vw;
     box-sizing: border-box;
-    // z-index: 100000;
     margin: auto;
   }
 
@@ -73,9 +70,28 @@
   }
 
   &__social-list {
+    max-width: 80px;
     position: absolute;
     bottom: 2%;
     right: 3%;
+
+    &_vertical {
+      gap: 20px;
+      width: auto;
+      display: flex;
+      flex-direction: column;
+
+      @include tablet {
+        right: 50%;
+        transform: translateX(50%);
+        flex-direction: row;
+      }
+    }
+
+    @include tablet {
+      right: 50%;
+      transform: translateX(50%);
+    }
   }
 }
 

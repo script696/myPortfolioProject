@@ -1,6 +1,9 @@
+@use "../mixins/mixins";
+
+
 .social-media-list {
   margin: 0;
-  max-width: 500px;
+  // max-width: 80px;
   line-height: 1.42857143;
   color: #333;
   box-sizing: border-box;
@@ -11,7 +14,9 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-
+  @include tablet {
+    max-width: 85%;
+  }
   & li {
     font-size: 22px;
     box-sizing: border-box;
@@ -53,10 +58,5 @@
     }
   }
 
-  &_vertical {
-    gap: 20px;
-    width: auto;
-    display: flex;
-    flex-direction: column;
-  }
+  
 }

@@ -78,6 +78,10 @@ class Form {
     return this._inputList.some(inputElement => !inputElement.validity.valid)
   }
 
+  resetForm(){
+    this._formElement.reset()
+  }
+
 }
 
 export default Form

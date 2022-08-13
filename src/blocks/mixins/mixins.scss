@@ -37,3 +37,13 @@ $maxWidth: 1980;
     @content;
   }
 }
+@mixin mobile {
+  @media screen and (max-width: 544px) {
+    @content;
+  }
+}
+@mixin mobileS {
+  @media screen and (max-width: 400px) {
+    @content;
+  }
+}

@@ -11,52 +11,78 @@
   background-image: linear-gradient(104deg, #111213 0%, #323234 100%);
   border-radius: 30px;
   box-shadow: 0 20px 80px 0 rgb(0 0 0 / 45%);
-
+  @include tablet {
+    padding: 40px 0 0 0;
+  }
   &__title {
-    @include adaptiv-font(55, 25);
+    @include adaptiv-font(55, 40);
     color: $text-color-gold;
+    font-family: $font-family-alternate;
     text-align: center;
     margin: 0 0 70px 0;
-    font-family: $font-family-alternate;
-
+    @include tablet {
+      margin: 0 0 30px 0;
+    }
   }
 
   &__subtitle {
     @include adaptiv-font(30, 20);
+    margin: 0 0 25px 0;
     display: inline-block;
     border-bottom: 2px solid $text-color-gold;
     font-family: $font-family-alternate;
     color: $text-color-red;
+  }
 
+  &__text {
+    @include adaptiv-font(20, 13);
+    margin: 0 auto 25px auto;
+    max-width: 70%;
+    text-align: start;
+    @include tablet {
+    margin: 0 auto 50px auto;
+      max-width: 85%;
+    }
   }
 
   &__container {
     display: flex;
     overflow: hidden;
+    @include tablet {
+      flex-direction: column;
+    }
   }
 
   &__left-col {
     flex: 1 1 50%;
     text-align: center;
+    @include tablet {
+      flex: 1 1 100%;
+    }
   }
   &__right-col {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     flex: 1 1 50%;
     transform: translateX(100%);
     transition: 0.3s ease-in;
     &_active {
       transform: translateX(0);
     }
+    @include tablet {
+      flex: 1 1 100%;
+    }
   }
 
-  &__text {
-    @include adaptiv-font(20, 13);
-    margin: auto;
-    max-width: 70%;
-    text-align: start;
-  }
   &__avatar-wrapper {
     position: relative;
     clip-path: polygon(25% 0%, 100% 0%, 100% 100%, 25% 100%, 0% 50%);
+    @include tablet {
+      clip-path: none;
+      border-radius: 0 0 30px 30px;
+      overflow: hidden;
+    }
     &::after {
       content: "";
       position: absolute;

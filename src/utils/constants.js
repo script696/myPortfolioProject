@@ -7,6 +7,9 @@ const contactsSection = document.querySelector(".contacts");
 const navigationMobile = document.querySelector('.navigation__mobile')
 const homeNavigationElement = document.querySelector('.navigation_home')
 const mainNavigationElement = document.querySelector('.navigation_with-scroll')
+const formLoaderMask = document.querySelector('.contacts__form-status')
+const formSuccesMsg = document.querySelector('.contacts__loader-sucess')
+const formRejectMsg = document.querySelector('.contacts__loader-reject')
 
 
 const projectTemplateSelector = ".project-template";
@@ -109,4 +112,7 @@ export {
   homeNavigationElement,
   mainNavigationElement,
   aboutSection,
+  formLoaderMask,
+  formSuccesMsg,
+  formRejectMsg,
 };

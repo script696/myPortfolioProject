@@ -21,9 +21,13 @@
     position: relative;
     max-width: 840px;
     gap: 50px;
+    @include tablet {
+      flex-direction: column;
+    }
   }
   &__form {
     margin: auto;
+    position: relative;
     width: 50%;
     display: flex;
     flex-direction: column;
@@ -33,6 +37,9 @@
     color: #333;
     box-sizing: border-box;
     font-weight: 400;
+    @include tablet {
+      width: 90%;
+    }
   }
   &__title {
     @include adaptiv-font(55, 25);
@@ -40,7 +47,6 @@
     color: $text-color-gold;
     margin: 0 0 70px 0;
     font-family: $font-family-alternate;
-
   }
 
   &__subtitle {
@@ -50,14 +56,28 @@
     margin: 0 0 80px 0;
     font-family: $font-family-alternate;
     color: $text-color-red;
-
+    @include tablet {
+      max-width: 90%;
+      margin: 0 0 40px 0;
+    }
   }
   &__information {
+    margin: 0;
     width: 50%;
+    height: 100%;
     display: flex;
+    justify-content: space-between;
     flex-direction: column;
+    @include tablet {
+      width: 90%;
+    }
   }
-
+  &__media-list-wrapper {
+    padding: 60px 0 0 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
   &__input {
     box-sizing: border-box;
     margin: auto;
@@ -117,34 +137,91 @@
     opacity: 0;
   }
   &__logo {
-    
     margin: 0 0 40px 0;
     display: flex;
     justify-content: center;
     align-items: center;
   }
+ 
   &__copyright {
     box-sizing: border-box;
     padding: 0 5%;
     display: flex;
     justify-content: space-between;
+    @include tablet {
+      flex-direction: column;
+    }
   }
   & svg {
     width: 20px;
     height: 20px;
   }
   &__copyright-text {
+    @include adaptiv-font(25, 10);
     letter-spacing: 0.1rem;
   }
 
+  &__form-status {
+    opacity: 0;
+    visibility: hidden;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(236, 182, 20, 0.1);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    border-radius: 10px;
+    transition: 0.7s;
+    &_active {
+      opacity: 1;
+      visibility: visible;
+    }
+  }
 
+  &__loader {
+    width: 100px;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  &__loader-sucess {
+    display: none;
+    color: #095a13;
+    & i {
+      font-size: 40px !important;
+      color: #095a13;
+    }
+    &_active{
+      display: block
+    }
+  }
+  &__loader-reject {
+    display: none;
+    color: #bd1616;
+    & i {
+      font-size: 40px !important;
+      color: #bd1616;
+    }
+    &_active{
+      display: block
+    }
+  }
+
+  &__form-text {
+    @include adaptiv-font(35, 25);
+    font-weight: 700;
+  }
 }
-.contacts-icon{
+.contacts-icon {
   display: block;
   width: 100%;
   height: 100%;
 }
-
 
 .form__text-error_active {
   opacity: 1;
@@ -168,7 +245,6 @@
   transform: scale(0.8);
 }
 .testBtn {
-  
   width: 200px;
   height: 100px;
   background-color: red;

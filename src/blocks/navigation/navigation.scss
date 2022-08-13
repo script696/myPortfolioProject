@@ -91,6 +91,10 @@
     &_open {
       transform: translateY(0);
     }
+
+    & .navigation__link {
+      @include adaptiv-font(120, 25);
+    }
   }
 
   &__burger {
@@ -100,6 +104,7 @@
     border: none;
     position: relative;
     z-index: 999;
+
     @include tablet {
       display: block;
     }

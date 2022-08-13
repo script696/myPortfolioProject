@@ -1,3 +1,5 @@
+@import "../mixins/mixins";
+
 .list-contact {
   width: 100%;
   height: 100%;
@@ -9,19 +11,28 @@
   justify-content: flex-start;
   align-items: flex-start;
   gap: 60px;
+  @include tablet {
+    margin: 0 auto 80px auto;
+
+  }
 }
 
 .list-contacts__item {
   color: #fff;
+  width: 100%;
+  text-align: start;
+  display: flex;
+
 }
 
 .list-contacts__text {
+  margin: auto;
   font-size: 25px;
-  margin: 0 0 0 30px;
   color: #fff;
 }
 
 .list-contact__link {
+  margin: auto;
   text-decoration: none;
   color: inherit;
 }

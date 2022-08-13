@@ -9,7 +9,7 @@ class Navigation {
     this._navigationButtons =
       this._element.querySelectorAll(".navigation__link");
     this._burgerButton = this._element.querySelector(".navigation__burger");
-    this._navigationMobile = this._navigationConfig.navigationMobile;
+    this._navigationMobile = this._element.querySelector(".navigation__mobile");
     this._scrollPos = 0;
 
 

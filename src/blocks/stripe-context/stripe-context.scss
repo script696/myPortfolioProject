@@ -6,21 +6,23 @@
   box-sizing: border-box;
   list-style: none;
   padding: 0 5vw 3vh 5vw;
-  display: flex;
-  justify-content: space-between;
- 
   & li {
     flex: 1 1 auto;
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 10px;
+    @include mobile {
+      justify-content: space-between;
+    }
   }
   span {
-    @include adaptiv-font(30, 20);
+    @include adaptiv-font(35, 20);
     color: $text-color-gold;
     margin-right: 10px;
     font-weight: 700;
+    font-family: $font-family-alternate;
+
   }
   p {
     @include adaptiv-font(30, 20);
