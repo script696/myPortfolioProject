@@ -9,15 +9,11 @@ $maxWidth: 1980;
   );
 }
 
-@mixin pos-abs($top, $right, $bottom, $left) {
-  position: absolute;
-  top: $top;
-  right: $right;
-	bottom: $bottom;
-	left: $left;
+@mixin pos-center() {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
-
-
 
 
 @mixin desktop {
@@ -44,6 +40,11 @@ $maxWidth: 1980;
 }
 @mixin mobileS {
   @media screen and (max-width: 400px) {
+    @content;
+  }
+}
+@mixin iHover {
+  @media screen and (min-width: 992px) {
     @content;
   }
 }

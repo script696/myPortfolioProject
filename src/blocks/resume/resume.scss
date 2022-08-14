@@ -1,7 +1,6 @@
 @import "../mixins/mixins";
 @import "../root/root";
 
-
 .resume {
   box-sizing: border-box;
   min-height: 100%;
@@ -16,6 +15,9 @@
     grid-template-columns: repeat(3, 1fr);
     gap: 25px;
     max-width: 70%;
+    @include desktop {
+      max-width: 90%;
+    }
     @include laptop {
       grid-template-columns: 1fr;
     }
@@ -28,7 +30,6 @@
     margin: 0 0 70px 0;
     @include tablet {
       margin: 0 0 50px 0;
-
     }
   }
   &__subtitle {
@@ -38,7 +39,6 @@
     margin: 0 0 60px 0;
     font-family: $font-family-alternate;
     color: $text-color-red;
-
   }
+ 
 }
-

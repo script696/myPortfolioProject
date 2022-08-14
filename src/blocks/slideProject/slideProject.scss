@@ -54,9 +54,13 @@
   }
 
   &__subtitle {
-    @include adaptiv-font(30, 25);
+    @include adaptiv-font(30, 20);
     letter-spacing: 0.085rem;
     margin: 0;
+    @include laptop {
+      margin: 0 0 50px 0;
+
+    }
   }
   &__stripe {
     display: flex;

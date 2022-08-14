@@ -3,50 +3,52 @@ import "./index.scss";
 import {
   swiper1,
   navigationConfig,
-  projectsConfig,
   sectionsConfig,
   projectTemplateSelector,
   projectsListSelector,
   projectSlideTemplateSelector,
-  navigation,
   contactsFormSelector,
   phpScriptLink,
   formOptions,
   homeNavigationElement,
   mainNavigationElement,
   aboutSection,
-  formLoaderMask,
-  formSuccesMsg,
-  formRejectMsg,
+  popupConfig,
+  apiCofig,
+  codewarsConfig,
 } from "../utils/constants.js";
 
 import allProjects from "../utils/projectsData.js";
 import Navigation from "../components/Navigation.js";
 import NavigationWithScroll from "../components/NavigationWithScroll.js";
-import Projects from "../components/Projects.js";
 import SectionInfo from "../components/SectionInfo.js";
 import Project from "../components/Project";
 import ProjectSlide from "../components/ProjectSlide.js";
 import Api from "../components/Api.js";
 import Form from "../components/Form.js";
+import Popup from "../components/Popup.js";
+import Codewars from "../components/Codewars.js";
+
+
 
 VANTA.BIRDS({
-  el: ".home  ",
+  el: ".home ",
   mouseControls: true,
   touchControls: true,
   gyroControls: false,
-  minHeight: 200.0,
-  minWidth: 200.0,
-  scale: 1.0,
-  scaleMobile: 1.0,
-  backgroundColor: 0x16171b,
+  minHeight: 200.00,
+  minWidth: 200.00,
+  scale: 1.00,
+  scaleMobile: 1.00,
+    backgroundColor: 0x16171b,
   color1: 0xecb614,
   color2: 0xb1361e,
-  speedLimit: 0.50,
-  birdSize: 0.50,
-  quantity: 3.0,
   colorMode: "lerpGradient",
-});
+  birdSize: 0.5,
+  quantity: 4,
+  speedLimit: 2,
+
+})
 
 
 const sectionsList = new SectionInfo(sectionsConfig);
@@ -77,49 +79,66 @@ const telegramForm = new Form(
 );
 telegramForm.setEventListeners();
 
-const api = new Api(phpScriptLink);
+const loadingPopup = new Popup(popupConfig);
 
+const api = new Api(apiCofig);
 
+api.getCodewarsUserData().then((res) => {
+  const {
+    username,
+    honor,
+    clan,
+    ranks: { languages },
+    ranks: {
+      overall: { name },
+    },
+    codeChallenges: { totalCompleted },
+  } = res;
+
+  const codewars = new Codewars({
+    username,
+    honor,
+    clan,
+    languages,
+    name,
+    totalCompleted,
+    codewarsConfig,
+  });
+  codewars.setValues();
+});
 
 async function apiTelegramHandler(bodyData) {
-  formLoaderMask.classList.add('contacts__form-status_active')
-
-  try{
-    const res = await api.sentTelegramMessage(bodyData)
-
-    res.ok 
-    ? formSuccesMsg.classList.add('contacts__loader-sucess_active')
-    : formRejectMsg.classList.add('contacts__loader-reject_active')
-  } catch (err){
-    console.log(err)
-  } finally{
-    setTimeout(()=>{
-      formLoaderMask.classList.remove('contacts__form-status_active')
-      formSuccesMsg.classList.remove('contacts__loader-sucess_active')
-    formRejectMsg.classList.remove('contacts__loader-reject_active')
-    telegramForm.resetForm()
-    },2000)
+  loadingPopup.openPopup();
+  try {
+    const res = await api.sentTelegramMessage(bodyData);
+    res.ok ? loadingPopup.handlePopup(true) : loadingPopup.handlePopup(false);
+  } catch (err) {
+    console.log(err);
+  } finally {
+    telegramForm.resetForm();
   }
 }
 
 function navigateSlider({ slideNumber, sectionToScroll, isMain }) {
-  swiper1.slideTo(slideNumber, 1000);
+  const isCurrentSlide = swiper1.activeIndex === slideNumber;
 
-  isMain
-    ? sectionToScroll?.scrollIntoView({ block: "start", behavior: "smooth" })
-    : setTimeout(
-        () =>
-          sectionToScroll?.scrollIntoView({
-            block: "start",
-            behavior: "smooth",
-          }),
-        1000
-      );
-
-  if (swiper1.slides.length === 3)
-    setTimeout(() => {
-      swiper1.removeSlide(2);
-    }, 1000);
+  if (isCurrentSlide) {
+    sectionToScroll?.scrollIntoView({ block: "start", behavior: "smooth" });
+  } else {
+    swiper1.slideTo(slideNumber, 1000);
+    setTimeout(
+      () =>
+        sectionToScroll?.scrollIntoView({
+          block: "start",
+          behavior: "smooth",
+        }),
+      1000
+    );
+    if (swiper1.slides.length === 3)
+      setTimeout(() => {
+        swiper1.removeSlide(2);
+      }, 1000);
+  }
 }
 
 function renderPage() {
@@ -155,15 +174,7 @@ function handleProjectMasc(entries) {
     }
   });
 }
-const aboutRightCol = document.querySelector(".about__right-col");
 
-function handleAboutSecAnimation(entries) {
-  entries.forEach((entry) => {
-    if (entry.isIntersecting) {
-      aboutRightCol.classList.add("about__right-col_active");
-    }
-  });
-}
 
 function addExtraSlide(projectSlideElem) {
   swiper1.appendSlide(projectSlideElem);
@@ -176,15 +187,11 @@ swiper1.on("slideResetTransitionEnd", () => {
   if (swiper1.slides.length === 3) swiper1.removeSlide(2);
 });
 
-const sectionAboutObserver = new IntersectionObserver(handleAboutSecAnimation, {
-  threshold: [0.9],
-});
 
 const projectObserver = new IntersectionObserver(handleProjectMasc, {
   threshold: [0.9],
 });
 
-sectionAboutObserver.observe(aboutSection);
 
 document
   .querySelectorAll(".project__insight-mask")

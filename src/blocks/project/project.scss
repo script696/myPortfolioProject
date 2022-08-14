@@ -37,7 +37,7 @@
   }
 
   &__title-description {
-    @include adaptiv-font(30, 17);
+    @include adaptiv-font(25, 17);
     margin-bottom: 30px;
     text-align: start;
   }
@@ -79,8 +79,6 @@
     }
   }
 
-  // rgba(199, 48, 37, 0.9),
-  // rgba(16, 27, 59, 0.9)
 
   &__masc-wrap {
     overflow: hidden;
@@ -115,10 +113,10 @@
     position: absolute;
     top: -5%;
     right: -6%;
-    width: 30%;
-    height: 170px;
-    font-size: 11.5em;
-    line-height: 1.2;
+    width: 200px;
+    height: 270px;
+    @include adaptiv-font(150, 120);
+    line-height: 100%;
     overflow: hidden;
     opacity: 1;
     z-index: 100;
@@ -164,57 +162,58 @@
 
 .project:nth-child(odd) {
   transform: translateX(15px);
+  @include laptop {
+    transform: translateX(0);
+  }
 }
 .project:nth-child(even) {
   transform: translateX(-15px);
+  @include laptop {
+    transform: translateX(0);
+  }
 }
 
-.project__main:hover .project__hover-mask::before {
-  transform: translateX(0);
-}
 
-.project__main:hover .project__text-wrap {
-  transform: scale(1.05);
-}
 
-.project__main:hover .mask-number__back {
-  opacity: 1;
-  transform: translateY(-30px) scale(1.05);
-  color: #fff;
+@include iHover {
+  .project__main:hover .project__hover-mask::before {
+    transform: translateX(0);
+  }
   
+  .project__main:hover .project__text-wrap {
+    transform: scale(1.05);
+  }
+  
+  .project__main:hover .mask-number__back {
+    opacity: 1;
+    transform: translateY(0) scale(1.05);
+    color: #fff;
+    
+  }
+  
+
 }
 
-.project__main:hover .mask-number__front {
-  top: 0;
-  transform: translateY(-30px);
-  transition: 0.4s ease;
-  transition-delay: 0.5s;
+
+@include laptop {
+  
+  .project__main .project__text-wrap {
+    transform: scale(1.05);
+  }
+  
+  .project__main .mask-number__back {
+    opacity: 1;
+    transform: translateY(0) scale(1.05);
+    color: #fff;
+    
+  }
+  
+  .project__main .mask-number__front {
+    top: 0;
+    transform: translateY(-30px);
+    transition: 0.4s ease;
+    transition-delay: 0.5s;
+  }
 }
 
-@media screen and (max-width: 1200px) {
-  .portfolio__projects {
-    gap: 90px;
-  }
-}
 
-@media screen and (max-width: 900px) {
-  .project {
-    &__main {
-      max-width: 90%;
-    }
-
-    &__text-wrap {
-      max-width: 100%;
-    }
-  }
-
-  .portfolio__projects {
-    gap: 50px;
-  }
-  .project:nth-child(odd) {
-    transform: translateX(0);
-  }
-  .project:nth-child(even) {
-    transform: translateX(0);
-  }
-}

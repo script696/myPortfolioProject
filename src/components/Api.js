@@ -1,6 +1,8 @@
 class Api {
-  constructor(phpScriptLink) {
+  constructor({phpScriptLink, codewarsLink}) {
     this._phpScriptLink = phpScriptLink;
+    this._codewarsLink = codewarsLink;
+
   }
 
   sentTelegramMessage(bodyData) {
@@ -8,7 +10,11 @@ class Api {
       method: "POST",
       body: bodyData,
     })
-    // .then(res => console.log(res));
+  }
+
+  getCodewarsUserData(){
+    return fetch(this._codewarsLink)
+    .then(res => res.json())
   }
 }
 

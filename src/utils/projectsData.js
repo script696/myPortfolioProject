@@ -16,13 +16,19 @@ import tuoTownInnerImg1 from "../img/portfolioProjects/tuoTown/tuoTownInnerImg1.
 import tuoTownInnerImg2 from "../img/portfolioProjects/tuoTown/tuoTownInnerImg2.png";
 import tuoTownInnerImg3 from "../img/portfolioProjects/tuoTown/tuoTownInnerImg3.png";
 
-
+// import myPortfolioMainImg from "../img/portfolioProjects/myPortfolioWebsite/myPortfolioMainImg.png";
+// import myPortfolioCode1 from "../img/portfolioProjects/myPortfolioWebsite/myPortfolioCode1.png";
+// import myPortfolioCode2 from "../img/portfolioProjects/myPortfolioWebsite/tuoTownCode2.png";
+// import myPortfolioCode3 from "../img/portfolioProjects/myPortfolioWebsite/tuoTownCode3.png";
+// import myPortfolioInnerImg1 from "../img/portfolioProjects/myPortfolioWebsite/tuoTownInnerImg1.png";
+// import myPortfolioInnerImg2 from "../img/portfolioProjects/myPortfolioWebsite/tuoTownInnerImg2.png";
+// import myPortfolioInnerImg3 from "../img/portfolioProjects/myPortfolioWebsite/tuoTownInnerImg3.png";
 
 const projectMesto = {
   images: {
     logo: {
       link: logo,
-      alt: 'Логотип NS'
+      alt: "Логотип NS",
     },
     mainImg: {
       link: mestoMainImg,
@@ -56,15 +62,15 @@ const projectMesto = {
   texts: {
     templateProjectTitle: "Mesto", //
     templateProjectSubtitle:
-      "Интерактивная страница, куда можно добавлять фотографии, удалять их и ставить лайки.", 
-    templateProjectRole: "Фронтенд разработчки", 
-    templateProjectContext: "Обучающий проект", 
-    templateProjectPeriod: "Май-Июнь 2022", 
+      "Интерактивная страница, куда можно добавлять фотографии, удалять их и ставить лайки.",
+    templateProjectRole: "Фронтенд разработчки",
+    templateProjectContext: "Обучающий проект",
+    templateProjectPeriod: "Май-Июнь 2022",
     templateProjectAbout: `Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum
     aspernatur magnam sapiente blanditiis eaque ipsum saepe eos fuga sint maiores!Lorem ipsum dolor sit
     amet consectetur adipisicing elit. Nostrum
-    aspernatur magnam sapiente blanditiis eaque ipsum saepe eos fuga sint maiores!`, 
-    templateProjectDescriptionOneTitle: "Изучение ООП", 
+    aspernatur magnam sapiente blanditiis eaque ipsum saepe eos fuga sint maiores!`,
+    templateProjectDescriptionOneTitle: "Изучение ООП",
     templateProjectDescriptionTwoTitle: "Работа с API",
     templateProjectDescriptionThreeTitle: "Валидация форм",
     templateProjectDescriptionOneText:
@@ -80,7 +86,7 @@ const projectTuoTown = {
   images: {
     logo: {
       link: logo,
-      alt: 'Логотип NS'
+      alt: "Логотип NS",
     },
     mainImg: {
       link: tuoTownMainImg,
@@ -114,15 +120,15 @@ const projectTuoTown = {
   texts: {
     templateProjectTitle: "TuoTown", //
     templateProjectSubtitle:
-      "Первый самостоятельный лендинг с всплывающем меню на чистом CSS!", 
-    templateProjectRole: "Фронтенд разработчки", 
-    templateProjectContext: "Обучающий проект", 
-    templateProjectPeriod: "Март 2022", 
+      "Первый самостоятельный лендинг с всплывающем меню на чистом CSS!",
+    templateProjectRole: "Фронтенд разработчки",
+    templateProjectContext: "Обучающий проект",
+    templateProjectPeriod: "Март 2022",
     templateProjectAbout: `Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum
     aspernatur magnam sapiente blanditiis eaque ipsum saepe eos fuga sint maiores!Lorem ipsum dolor sit
     amet consectetur adipisicing elit. Nostrum
-    aspernatur magnam sapiente blanditiis eaque ipsum saepe eos fuga sint maiores!`, 
-    templateProjectDescriptionOneTitle: "Первый SCSS опыт", 
+    aspernatur magnam sapiente blanditiis eaque ipsum saepe eos fuga sint maiores!`,
+    templateProjectDescriptionOneTitle: "Первый SCSS опыт",
     templateProjectDescriptionTwoTitle: "Чекбокс для открытия меню",
     templateProjectDescriptionThreeTitle: "Адаптивная верстка",
     templateProjectDescriptionOneText:
@@ -133,11 +139,11 @@ const projectTuoTown = {
       "Выполнил адаптивную верстку с использованием flex && grid layout, медиазапросов",
   },
 };
-const projectRussianTravel = {
+const myPortfolioproject = {
   images: {
     logo: {
       link: logo,
-      alt: 'Логотип NS'
+      alt: "Логотип NS",
     },
     mainImg: {
       link: mestoMainImg,
@@ -169,17 +175,17 @@ const projectRussianTravel = {
     },
   },
   texts: {
-    templateProjectTitle: "Mesto", //
+    templateProjectTitle: "myPortfolioProject", //
     templateProjectSubtitle:
-      "Интерактивная страница, куда можно добавлять фотографии, удалять их и ставить лайки.", 
-    templateProjectRole: "Фронтенд разработчки", 
-    templateProjectContext: "Обучающий проект", 
-    templateProjectPeriod: "Май-Июнь 2022", 
+      "Интерактивная страница, куда можно добавлять фотографии, удалять их и ставить лайки.",
+    templateProjectRole: "Фронтенд разработчки",
+    templateProjectContext: "Обучающий проект",
+    templateProjectPeriod: "Май-Июнь 2022",
     templateProjectAbout: `Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum
     aspernatur magnam sapiente blanditiis eaque ipsum saepe eos fuga sint maiores!Lorem ipsum dolor sit
     amet consectetur adipisicing elit. Nostrum
-    aspernatur magnam sapiente blanditiis eaque ipsum saepe eos fuga sint maiores!`, 
-    templateProjectDescriptionOneTitle: "Изучение ООП", 
+    aspernatur magnam sapiente blanditiis eaque ipsum saepe eos fuga sint maiores!`,
+    templateProjectDescriptionOneTitle: "Изучение ООП",
     templateProjectDescriptionTwoTitle: "Работа с API",
     templateProjectDescriptionThreeTitle: "Валидация форм",
     templateProjectDescriptionOneText:
@@ -191,6 +197,6 @@ const projectRussianTravel = {
   },
 };
 
-const allProjects = [projectMesto, projectTuoTown, projectRussianTravel];
+const allProjects = [projectMesto, projectTuoTown, myPortfolioproject];
 
 export default allProjects;

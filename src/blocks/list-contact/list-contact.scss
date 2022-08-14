@@ -27,7 +27,7 @@
 
 .list-contacts__text {
   margin: auto;
-  font-size: 25px;
+  @include adaptiv-font(27, 19);
   color: #fff;
 }
 

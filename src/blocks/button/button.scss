@@ -1,8 +1,9 @@
+@import "../mixins/mixins";
+@import "../root/root";
+
 $telegram-bg-color: #337ab7;
 $black-bg-color: #000;
 $text-color: #fff;
-
-
 
 .button {
   display: block;
@@ -48,6 +49,7 @@ $text-color: #fff;
   left: 50%;
   transform: translate(-50%, 200%);
   transition: all 0.2s linear;
+  text-transform: uppercase;
 }
 
 
@@ -59,37 +61,61 @@ $text-color: #fff;
   left: 50%;
   transform: translate(-50%, -50%);
   transition: all 0.2s linear;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  @include pos-center();
 }
-
-
-
 
 .button_transform_horizontal .button__text {
   transform: translate(-800%, -50%);
 }
 
-.button_transform_vertical:hover .button__text {
-  transform: translate(-50%, -50%);
+
+@include iHover {
+  .button_transform_vertical:hover .button__text {
+    transform: translate(-50%, -50%);
+  }
+  .button_transform_vertical:hover .button__icon {
+    transform: translate(-50%, -300%);
+  }
+  .contact__button:hover .button__text {
+    transform: translate(-50%, -50%);
+  }
+  
+  .contact__button:hover .button__icon {
+    transform: translate(-50%, -200%);
+  }
+  
+  .button_transform_horizontal:hover .button__icon {
+    transform: translate(230%, -50%);
+  }
+  
+  .button_transform_horizontal:hover .button__text {
+    transform: translate(-50%, -50%);
+  }
+
 }
-.button_transform_vertical:hover .button__icon {
-  transform: translate(-50%, -300%);
-}
-.contact__button:hover .button__text {
-  transform: translate(-50%, -50%);
+@include laptop {
+  .button_transform_vertical .button__text {
+    transform: translate(-50%, -50%);
+  }
+  .button_transform_vertical .button__icon {
+    transform: translate(-50%, -300%);
+  }
+  .contact__button .button__text {
+    transform: translate(-50%, -50%);
+  }
+  
+  .contact__button .button__icon {
+    transform: translate(-50%, -200%);
+  }
+  
+  .button_transform_horizontal .button__icon {
+    transform: translate(230%, -50%);
+  }
+  
+  .button_transform_horizontal .button__text {
+    transform: translate(-50%, -50%);
+  }
 }
 
-.contact__button:hover .button__icon {
-  transform: translate(-50%, -200%);
-}
 
-.button_transform_horizontal:hover .button__icon {
-  transform: translate(230%, -50%);
-}
-
-.button_transform_horizontal:hover .button__text {
-  transform: translate(-50%, -50%);
-}
 

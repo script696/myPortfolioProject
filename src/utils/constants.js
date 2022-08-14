@@ -7,9 +7,7 @@ const contactsSection = document.querySelector(".contacts");
 const navigationMobile = document.querySelector('.navigation__mobile')
 const homeNavigationElement = document.querySelector('.navigation_home')
 const mainNavigationElement = document.querySelector('.navigation_with-scroll')
-const formLoaderMask = document.querySelector('.contacts__form-status')
-const formSuccesMsg = document.querySelector('.contacts__loader-sucess')
-const formRejectMsg = document.querySelector('.contacts__loader-reject')
+const loadingPopupElem = document.querySelector('.loading-popup')
 
 
 const projectTemplateSelector = ".project-template";
@@ -59,6 +57,16 @@ var swiper1 = new Swiper(".mySwiper1", {
  
 });
 
+
+const apiCofig = {
+  phpScriptLink: 'telegram.php',
+  codewarsLink: 'https://www.codewars.com/api/v1/users/scr1pt696'
+}
+
+const codewarsConfig = {
+  skillsList: '.codewars__items',
+}
+
 const navigationConfig = {
   // homeNavigatorSelector: ".navigation",
   home: {
@@ -85,34 +93,34 @@ const navigationConfig = {
 
   },
 
-
   navigationMobile,
   mainSection: mainSection,
 };
 
+const popupConfig = {
+  popupElem: loadingPopupElem,
+  loaderSucessClass: '.loading-popup__loader-sucess',
+  loaderRejectClass: '.loading-popup__loader-reject',
+  loaderClass: '.loading-popup__loader',
+}
 const sectionsConfig = {
   sectionsSelector: ".section",
-};
-const projectsConfig = {
-  projectSelector: ".project",
 };
 
 export {
   swiper1,
   navigationConfig,
-  projectsConfig,
   sectionsConfig,
   projectTemplateSelector,
   projectsListSelector,
   projectSlideTemplateSelector,
   contactsFormSelector,
-  navigation,
   phpScriptLink,
   formOptions,
   homeNavigationElement,
   mainNavigationElement,
   aboutSection,
-  formLoaderMask,
-  formSuccesMsg,
-  formRejectMsg,
+  popupConfig,
+  apiCofig,
+  codewarsConfig,
 };

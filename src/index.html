@@ -6,10 +6,32 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
   <title>Nik Semenov</title>
+  <link rel="icon" href="<%=require('./img/logo/logo_dark.svg')%>" type="image/x-icon">
   <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
 </head>
 
 <body class="page">
+  <!-- <div class="preloader">
+    <div class="preloader__layer preloader__layer1"></div>
+    <div class="preloader__layer preloader__layer2"></div>
+    <div class="preloader__layer preloader__layer3"></div>
+    <div class="preloader__layer preloader__layer4"></div>
+    <div class="preloader__layer preloader__layer5"></div>
+    <div class="loader"></div>
+  </div> -->
+  <div class="loading-popup">
+    <div class="loading-popup__loader">
+      <div class="loader-timer"></div>
+    </div>
+    <div class="loading-popup__loader-sucess">
+      <p class="loading-popup__form-text">Отправлено</p>
+      <i class="fa-solid fa-circle-check"></i>
+    </div>
+    <div class="loading-popup__loader-reject">
+      <p class="loading-popup__form-text">Ошибка</p>
+      <i class="fa-solid fa-xmark"></i>
+    </div>
+  </div>
   <div class="swiper mySwiper1">
     <div class="swiper-wrapper">
       <div class="swiper-slide">
@@ -103,7 +125,7 @@
               </div>
               <div class="about__right-col">
                 <div class="about__avatar-wrapper">
-                  <img class="about__avatar" src="<%=require('./img/myMainPhoto/myAvatar.jpg')%>" alt="">
+                  <img class="about__avatar" src="<%=require('./img/myMainPhoto/myAvatar.jpg')%>" alt="Никита в горах">
                 </div>
               </div>
             </div>
@@ -173,6 +195,41 @@
                 </div>
               </article>
             </div>
+            <div class="resume__codewars codewars">
+              <div class="codewars__wrapper">
+                <h2 class="codewars__title">Codewars - война должна быть только такой...</h2>
+              <div class="codewars__logo-wrapper">
+                <img class="codewars__logo" src="<%=require('./img/logo/codewars.png')%>" alt="Логотип Codewars">
+              </div>
+              </div>
+              <ul class="codewars__items">
+                <li class="codewars__item">
+                  <p class="codewars__text">Никнейм</p>
+                  <p class="codewars__text codewars__text-api" id="username">script696</p>
+                </li>
+                <li class="codewars__item">
+                  <p class="codewars__text">Клан</p>
+                  <p class="codewars__text codewars__text-api" id="clan">Яндекс Практикум</p>
+                </li>
+                <li class="codewars__item">
+                  <p class="codewars__text">Всего языков</p>
+                  <p class="codewars__text codewars__text-api" id="languages">2</p>
+                </li>
+                <li class="codewars__item">
+                  <p class="codewars__text">Ранг</p>
+                  <p class="codewars__text codewars__text-api" id="ranks">5kuy</p>
+                </li>
+                <li class="codewars__item">
+                  <p class="codewars__text">Рейтинг</p>
+                  <p class="codewars__text codewars__text-api" id="honor">420</p>
+                </li>
+                <li class="codewars__item">
+                  <p class="codewars__text">Решенных задач</p>
+                  <p class="codewars__text codewars__text-api" id="totalCompleted">102</p>
+                </li>
+              </ul>
+              <a href="https://www.codewars.com/users/scr1pt696" target="_blank"><img src="https://www.codewars.com/users/scr1pt696/badges/large" alt=""></a>
+            </div>
           </section>
           <section id="contacts-section" class="section contacts">
             <h2 class="contacts__title">У вас остались вопросы?</h2>
@@ -204,19 +261,7 @@
                     </div>
                   </button>
                 </div>
-                <div class="contacts__form-status">
-                  <div class="contacts__loader">
-                    <div class="two"></div>
-                  </div>
-                  <div class="contacts__loader-sucess">
-                    <p class="contacts__form-text">Отправлено</p>
-                    <i class="fa-solid fa-circle-check"></i>
-                  </div>
-                  <div class="contacts__loader-reject">
-                    <p class="contacts__form-text">Ошибка</p>
-                    <i class="fa-solid fa-xmark"></i>
-                  </div>
-                </div>
+
               </form>
               <div class="contacts__information">
                 <ul class="contacts__list list-contact">
@@ -278,6 +323,17 @@
       </div>
     </div>
   </div>
+  <!-- <script>
+
+    const layer = document.querySelector('.preloader');
+
+    console.log('start');
+
+    window.addEventListener('load', (event) => {
+      console.log('loaded!');
+      layer.classList.add('preloader_loaded')
+    });
+  </script> -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r121/three.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.birds.min.js"></script>
   <script src="https://kit.fontawesome.com/bede1d588b.js" crossorigin="anonymous"></script>
