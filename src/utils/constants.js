@@ -1,4 +1,4 @@
-const navigation = document.querySelector(".navigation");
+const preloaderElem = document.querySelector('.preloader');
 const mainSection = document.querySelector(".main");
 const aboutSection = document.querySelector(".about");
 const portfolioSection = document.querySelector(".portfolio");
@@ -15,7 +15,6 @@ const projectSlideTemplateSelector = ".projecSlide-template";
 const projectsListSelector = ".portfolio__projects";
 const contactsFormSelector = '.contacts__form'
 
-const phpScriptLink = 'telegram.php'
 
 const formOptions = {
   inputSelector: '.form__text',
@@ -24,22 +23,6 @@ const formOptions = {
   inputErrorClass: 'form__text_type_error',
   errorClass: 'form__text-error_active'
 }
-
-
-
-// const swiper1 = new Swiper(".mySwiper1", {
-//   effect: "cube",
-//   grabCursor: true,
-//   cubeEffect: {
-//     shadow: false,
-//     slideShadows: true,
-//     shadowOffset: 20,
-//     shadowScale: 0.94,
-//   },
-//   pagination: {
-//     el: ".swiper-pagination",
-//   },
-// });
 
 
 var swiper1 = new Swiper(".mySwiper1", {
@@ -68,7 +51,6 @@ const codewarsConfig = {
 }
 
 const navigationConfig = {
-  // homeNavigatorSelector: ".navigation",
   home: {
     slideNum: 0,
     sectionToScroll: null,
@@ -108,6 +90,7 @@ const sectionsConfig = {
 };
 
 export {
+  preloaderElem,
   swiper1,
   navigationConfig,
   sectionsConfig,
@@ -115,7 +98,6 @@ export {
   projectsListSelector,
   projectSlideTemplateSelector,
   contactsFormSelector,
-  phpScriptLink,
   formOptions,
   homeNavigationElement,
   mainNavigationElement,

@@ -1,6 +1,7 @@
 import "./index.scss";
 
 import {
+  preloaderElem,
   swiper1,
   navigationConfig,
   sectionsConfig,
@@ -8,7 +9,6 @@ import {
   projectsListSelector,
   projectSlideTemplateSelector,
   contactsFormSelector,
-  phpScriptLink,
   formOptions,
   homeNavigationElement,
   mainNavigationElement,
@@ -28,6 +28,7 @@ import Api from "../components/Api.js";
 import Form from "../components/Form.js";
 import Popup from "../components/Popup.js";
 import Codewars from "../components/Codewars.js";
+import Preloader from "../components/Preloader";
 
 
 
@@ -50,6 +51,8 @@ VANTA.BIRDS({
 
 })
 
+const preloader = new Preloader (preloaderElem)
+preloader.setEventListeners()
 
 const sectionsList = new SectionInfo(sectionsConfig);
 sectionsList.setSectionInfo();
