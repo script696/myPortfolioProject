@@ -47,7 +47,7 @@
   }
 
   &__title {
-    @include adaptiv-font(120, 80);
+    @include adaptiv-font(110, 70);
     font-family: $font-family-alternate;
     color: $text-color-gold;
     margin: 0 0 30px 0;
@@ -55,12 +55,11 @@
   }
 
   &__subtitle {
-    @include adaptiv-font(40, 20);
+    @include adaptiv-font(45, 20);
     margin: 0 0 25px 0;
     display: inline-block;
-    border-bottom: 2px solid $text-color-gold;
     font-family: $font-family-alternate;
-    color: $text-color-red;
+    color: #fff;
     @include laptop {
       margin: 0 0 50px 0;
 

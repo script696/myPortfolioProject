@@ -12,11 +12,11 @@
 
 <body class="page">
   <div class="preloader">
-    <div class="preloader__layer preloader__layer1"></div>
-    <div class="preloader__layer preloader__layer2"></div>
-    <div class="preloader__layer preloader__layer3"></div>
-    <div class="preloader__layer preloader__layer4"></div>
-    <div class="preloader__layer preloader__layer5"></div>
+    <div class="preloader__layer1"></div>
+    <div class="preloader__layer2"></div>
+    <div class="preloader__layer3"></div>
+    <div class="preloader__layer4"></div>
+    <div class="preloader__layer5"></div>
     <div class="loader"></div>
   </div>
   <div class="loading-popup">
@@ -330,24 +330,27 @@
   <template class="project-template">
     <li class="portfolio__project project">
       <article class="project__main">
-        <img src="#" alt="#" class="project__main-mask" name="mainImg">
-        <div class="project__hover-mask"></div>
-        <div class="project__masc-wrap">
-          <div class="project__insight-mask"></div>
-        </div>
         <div class="project__number-mask mask-number">
           <div class="mask-number__back"></div>
         </div>
-        <div class="project__text-wrap">
-          <h3 class="project__title" name="title"></h3>
-          <p class="project__title-description" name="subtitle"></p>
-          <div class="project__btn-wrapper">
-            <button class="project__button button button_color_default button_transform_horizontal" type="type">
-              <div class="button__text ">Ещё</div>
-              <div class="button__icon ">
-                <i class="fa-solid fa-arrow-right-long"></i>
-              </div>
-            </button>
+        <div class="project__wrapper">
+          <img src="#" alt="#" class="project__main-mask" name="mainImg">
+          <div class="project__hover-mask"></div>
+          <div class="project__masc-wrap">
+            <div class="project__insight-mask"></div>
+          </div>
+          
+          <div class="project__text-wrap">
+            <h3 class="project__title" name="title"></h3>
+            <p class="project__title-description" name="subtitle"></p>
+            <div class="project__btn-wrapper">
+              <button class="project__button button button_color_default button_transform_horizontal" type="type">
+                <div class="button__text ">Ещё</div>
+                <div class="button__icon ">
+                  <i class="fa-solid fa-arrow-right-long"></i>
+                </div>
+              </button>
+            </div>
           </div>
         </div>
       </article>

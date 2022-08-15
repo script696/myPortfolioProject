@@ -14,8 +14,7 @@
   
     z-index: 10;
     transform: rotate(45deg);
-    // background: #000;
-    // box-shadow: 4px 4px 60px 53px rgba(0, 0, 0, 0.31);
+
     &::after{
       content: "";
       height: 100%;
@@ -55,7 +54,6 @@
     @include adaptiv-font(30, 20);
     margin: 0 0 80px 0;
     display: inline-block;
-    border-bottom: 2px solid $text-color-gold;
     font-family: $font-family-alternate;
     color: $text-color-red;
   }

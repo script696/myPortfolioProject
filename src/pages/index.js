@@ -180,6 +180,8 @@ function handleProjectMasc(entries) {
 
 
 function addExtraSlide(projectSlideElem) {
+  if (swiper1.slides.length === 3) swiper1.removeSlide(2);
+
   swiper1.appendSlide(projectSlideElem);
   setTimeout(() => swiper1.slideNext(1000), 300);
 }
@@ -187,7 +189,9 @@ function addExtraSlide(projectSlideElem) {
 renderPage();
 
 swiper1.on("slideResetTransitionEnd", () => {
-  if (swiper1.slides.length === 3) swiper1.removeSlide(2);
+  if (swiper1.slides.length === 3 && swiper1.activeIndex === 1) {
+    swiper1.removeSlide(2)
+  };
 });
 
 
