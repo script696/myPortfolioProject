@@ -25,6 +25,9 @@ import mestoReactInnerImg2 from "../img/portfolioProjects/mesto-react/mestoReact
 import mestoReactInnerImg3 from "../img/portfolioProjects/mesto-react/mestoReactInnerImg1.png";
 
 const projectMestoReact = {
+  links: {
+    githubPages: "https://script696.github.io/mesto-react",
+  },
   images: {
     logo: {
       link: logo,
@@ -61,8 +64,7 @@ const projectMestoReact = {
   },
   texts: {
     templateProjectTitle: "Mesto-React", //
-    templateProjectSubtitle:
-      "Реактивный подход к старому проекту!",
+    templateProjectSubtitle: "Реактивный подход к старому проекту!",
     templateProjectRole: "Фронтенд разработчик",
     templateProjectContext: "Обучающий проект",
     templateProjectPeriod: "Май-Июнь 2022",
@@ -85,6 +87,9 @@ const projectMestoReact = {
 };
 
 const projectMesto = {
+  links: {
+    githubPages: "https://script696.github.io/mesto/",
+  },
   images: {
     logo: {
       link: logo,
@@ -145,6 +150,9 @@ const projectMesto = {
 };
 
 const projectTuoTown = {
+  links: {
+    githubPages: "https://github.com/script696/TuoTown",
+  },
   images: {
     logo: {
       link: logo,

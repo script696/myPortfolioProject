@@ -26,6 +26,15 @@ class ProjectSlide {
     return projectSlideElement;
   }
 
+  _setLinks() {
+    const {
+      links: { githubPages },
+    } = this._projectData;
+
+    this._projectElement.querySelector(".main-slidproject__link").href =
+      githubPages;
+  }
+
   _setImgsProps() {
     this._projectElement.querySelectorAll("img").forEach((imgElem) => {
       imgElem.src = this._projectData["images"][imgElem.name]["link"];
@@ -37,7 +46,6 @@ class ProjectSlide {
     this._projectElement
       .querySelectorAll(".slideProject__text-sel")
       .forEach((textElem) => {
-        const test = this._projectData["texts"][textElem.id];
         textElem.textContent = this._projectData["texts"][textElem.id];
       });
   }
@@ -65,7 +73,7 @@ class ProjectSlide {
 
     this._setImgsProps();
     this._setTextsProps();
-
+    this._setLinks();
     return this._projectElement;
   }
 }
