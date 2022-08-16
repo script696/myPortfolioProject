@@ -151,7 +151,7 @@ const projectMesto = {
 
 const projectTuoTown = {
   links: {
-    githubPages: "https://github.com/script696/TuoTown",
+    githubPages: "https://script696.github.io/TuoTown/",
   },
   images: {
     logo: {

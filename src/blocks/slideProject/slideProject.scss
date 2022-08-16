@@ -35,9 +35,7 @@
   }
   &__titls-wrapper {
     padding: 30vh 0 0  0;
-    @include tablet {
-      padding: 15vh 0 0  0;
-    }
+    
     position: relative;
     z-index: 2;
     text-align: center;

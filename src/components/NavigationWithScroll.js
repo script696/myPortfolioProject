@@ -24,9 +24,9 @@ class NavigationWithScroll extends Navigation {
   _handleMenu() {
     this._st = this._mainSection.scrollTop;
     
-    this._st > this._scrollPos
-      ? this._element.classList.add("navigation_hide")
-      : this._element.classList.remove("navigation_hide");
+    if(this._st > this._scrollPos) this._element.classList.add("navigation_hide")
+    if(this._st < this._scrollPos && this._st > 30) this._element.classList.remove("navigation_hide");
+   
     this._scrollPos = this._st;
   }
 }
