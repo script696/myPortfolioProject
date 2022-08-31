@@ -1,5 +1,21 @@
 import logo from "../img/logo/logo.svg";
 
+import weatherlyMainImg from "../img/portfolioProjects/weatherly/weatherlyMainImg.png";
+import weatherlyCode1 from "../img/portfolioProjects/weatherly/weatherlyCode1.png";
+import weatherlyCode2 from "../img/portfolioProjects/weatherly/weatherlyCode2.png";
+import weatherlyCode3 from "../img/portfolioProjects/weatherly/weatherlyCode3.png";
+import weatherlyInnerImg1 from "../img/portfolioProjects/weatherly/weatherlyInnerImg1.png";
+import weatherlyInnerImg2 from "../img/portfolioProjects/weatherly/weatherlyInnerImg2.png";
+import weatherlyInnerImg3 from "../img/portfolioProjects/weatherly/weatherlyInnerImg3.png";
+
+import messengerMainImg from "../img/portfolioProjects/messenger/messengerMainImg.png";
+import messengerCode1 from "../img/portfolioProjects/messenger/messengerCode1.png";
+import messengerCode2 from "../img/portfolioProjects/messenger/messengerCode2.png";
+import messengerCode3 from "../img/portfolioProjects/messenger/messengerCode3.png";
+import messengerInnerImg1 from "../img/portfolioProjects/messenger/messengerInnerImg1.png";
+import messengerInnerImg2 from "../img/portfolioProjects/messenger/messengerInnerImg2.png";
+import messengerInnerImg3 from "../img/portfolioProjects/messenger/messengerInnerImg3.png";
+
 import mestoMainImg from "../img/portfolioProjects/mesto/mestoMainImg.png";
 import mestoCode1 from "../img/portfolioProjects/mesto/mestoCode1.png";
 import mestoCode2 from "../img/portfolioProjects/mesto/mestoCode2.png";
@@ -23,6 +39,136 @@ import mestoReactCode3 from "../img/portfolioProjects/mesto-react/mestoReactCode
 import mestoReactInnerImg1 from "../img/portfolioProjects/mesto-react/mestoReactInnerImg1.png";
 import mestoReactInnerImg2 from "../img/portfolioProjects/mesto-react/mestoReactInnerImg1.png";
 import mestoReactInnerImg3 from "../img/portfolioProjects/mesto-react/mestoReactInnerImg1.png";
+
+const projectWeatherly = {
+  links: {
+    githubPages: "https://script696.github.io/weatherly/",
+  },
+  images: {
+    logo: {
+      link: logo,
+      alt: "Логотип NS",
+    },
+    mainImg: {
+      link: weatherlyMainImg,
+      alt: "Проект Weatherly общее изображение",
+    },
+    codeOneImg: {
+      link: weatherlyCode1,
+      alt: "Фрагмент кода TSX. Компонент weatherSliceReducer",
+    },
+    codeTwoImg: {
+      link: weatherlyCode2,
+      alt: "Фрагмент кода TSX. Flex",
+    },
+    codeThreeImg: {
+      link: weatherlyCode3,
+      alt: "Фрагмент кода TS. Типы",
+    },
+    innerImgOne: {
+      link: weatherlyInnerImg1,
+      alt: "Внешний вид приложения. Меню выбора городов",
+    },
+    innerImgTwo: {
+      link: weatherlyInnerImg2,
+      alt: "Внешний вид приложения. Недельный прогноз",
+    },
+    innerImgThree: {
+      link: weatherlyInnerImg3,
+      alt: "Внешний вид приложения. Главный экран",
+    },
+  },
+  texts: {
+    templateProjectTitle: "Weatherly",
+    templateProjectSubtitle: `Приложение "Прогноз погоды"`,
+    templateProjectRole: "Фронтенд разработчик",
+    templateProjectContext: "Изучение нового стека",
+    templateProjectPeriod: "Август 2022",
+    templateProjectAbout: `Прогноз погоды - приложение, 
+    в котором реализован суточный и недельный проноз погоды с возможностью выбора города.
+    Для изучения технологий Style Components и Redux Toolkit мною была выбрана идея разработчки небольшого приложения,
+    в которое бы хорошо вписалось применение данных концепций.
+    В качестве сервиса предоставления погоды был выбран "Open-Meteo" с открытым API.
+    `,
+    templateProjectDescriptionOneTitle: "Middleware",
+    templateProjectDescriptionTwoTitle: "Кастомные, типизированные хуки",
+    templateProjectDescriptionThreeTitle: "Style Components",
+    templateProjectDescriptionOneText:
+      "При асинхронной работе с хранилищем использовал дефолтный Redux Toolkit Middleware ",
+    templateProjectDescriptionTwoText:
+      "Для использования хуков useDispatch и useSelector совместно с TypeScript применены кастомные хуки на основе типов хранилища",
+    templateProjectDescriptionThreeText:
+      "В качестве нового средства стилизации использована библиотека Style Components",
+  },
+};
+const projectMessenger = {
+  links: {
+    githubPages: "https://script696.github.io/messenger/",
+  },
+  images: {
+    logo: {
+      link: logo,
+      alt: "Логотип NS",
+    },
+    mainImg: {
+      link: messengerMainImg,
+      alt: "Проект Messenger общее изображение",
+    },
+    codeOneImg: {
+      link: messengerCode1,
+      alt: "Фрагмент кода TSX. Компонент MsgCard",
+    },
+    codeTwoImg: {
+      link: messengerCode2,
+      alt: "Фрагмент кода TS. reducer1",
+    },
+    codeThreeImg: {
+      link: messengerCode3,
+      alt: "Фрагмент кода TS. Типы",
+    },
+    innerImgOne: {
+      link: messengerInnerImg1,
+      alt: "Внешний вид мессежера, заполнение инпутов",
+    },
+    innerImgTwo: {
+      link: messengerInnerImg2,
+      alt: "Внешний вид мессежера, установка фильтра",
+    },
+    innerImgThree: {
+      link: messengerInnerImg3,
+      alt: "Внешний вид мессежера, отправка сообщения",
+    },
+  },
+  texts: {
+    templateProjectTitle: "Messenger",
+    templateProjectSubtitle: `Приложение "Чат"`,
+    templateProjectRole: "Фронтенд разработчик",
+    templateProjectContext: "Тестовое задание",
+    templateProjectPeriod: "Август 2022",
+    templateProjectAbout: `Чат - приложение, в котором реализован чат с условным роботом
+    и пользователем с использованием фейковой базы данных. 
+    При наведении на сообщения появляется возможность "ответить".
+    Для применения фильтров к тексту сообщения предусмотрен собственный редактор 
+    текста с возможностью применения фильтров ко всему вводимому сообщению и сброса примененных фильтров. 
+    Для имитации работой с БД реализованы фейковые запросы и редактирование локальных объектов с использованием промисов.
+  
+    
+
+    `,
+    templateProjectDescriptionOneTitle: "Применение css-in-js",
+    templateProjectDescriptionTwoTitle: "Разработан свой WYSIWYG",
+    templateProjectDescriptionThreeTitle: "TypeScript",
+    templateProjectDescriptionOneText:
+      "Использовал модульный подход в написании классов. Это позволило отойти от концепции БЭМ и не переживать о специфичности селекторов",
+    templateProjectDescriptionTwoText:
+      "По ТЗ было необходимо реаллизовать текстовый редактор без использования сторонних библиотек. Для создния 5 фильтров и кнопки сброса я решил использовать хук useReducer, вынести всю логику редактора отдульную функцию",
+    templateProjectDescriptionThreeText:
+      "Для тренировки приложение написано на Typescript с использованием интерфейсов и дженериков",
+  },
+};
+
+
+
 
 const projectMestoReact = {
   links: {
@@ -213,6 +359,12 @@ const projectTuoTown = {
   },
 };
 
-const allProjects = [projectMestoReact, projectMesto, projectTuoTown];
+const allProjects = [
+  projectWeatherly,
+  projectMesto,
+  projectMessenger,
+  projectMestoReact,
+  projectTuoTown,
+];
 
 export default allProjects;

@@ -14,6 +14,9 @@ class NavigationWithScroll extends Navigation {
     this._mainSection.addEventListener("scroll", () => {this._handleMenu()});
 
     this._scrollTopBtn.addEventListener('click', ()=> {
+
+      console.log(this._sectionToScroll);
+      
       
       this._sectionToScroll?.scrollIntoView({block: 'start', behavior: 'smooth'})
     })
